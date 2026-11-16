@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wolne Płuco | Rzuć palenie</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Chcesz rzucić palenie i ciągle wracasz? Wyjdź z nikotyny bez siły woli i bez poczucia, że coś tracisz. Program 90 dni Tomasza Świadomość: lekcje audio, ćwiczenia dnia i spotkania na żywo. Papierosy, e-papierosy i saszetki.">
+<meta property="og:title" content="Wolne Płuco | Rzuć nikotynę bez siły woli">
+<meta property="og:description" content="Program 90 dni: lekcje audio, ćwiczenia dnia i spotkania na żywo. Papierosy, e-papierosy i saszetki.">
+<meta property="og:image" content="img/logo-512.png">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#F6F5FF">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap">
+<style>
+  /* Jasny, „powietrzny” wygląd: lawendowa biel, głęboki indygo i limonkowy akcent.
+     Celowo bez czerwieni, złota, mięty i pomarańczu (kolory paczek i papierosa). Kolory zmieniasz tylko tutaj. */
+  :root{
+    --bg:#F6F5FF; --bg2:#ECEBFA; --card:#FFFFFF; --line:#DCDAF0;
+    --ink:#17153B; --muted:#55537A; --dim:#8A88A8;
+    --accent:#4F46E5; --accent-dark:#3E36C9; --accent-soft:#E7E6FD;
+    --lime:#C8F25C; --lime-ink:#1A2600;
+    --night:#17153B; --night2:#221F52; --night-ink:#F3F2FF; --night-muted:#B7B5DA;
+    --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+    --text:"Manrope",-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+    --r:20px; --max:1160px;
+    color-scheme:light;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 var(--text);-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:var(--accent)}
+  .wrap{max-width:var(--max);margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+  section{padding-block:84px}
+  h1,h2,h3{margin:0 0 16px;text-wrap:balance}
+  h1,h2{font-family:var(--serif);font-weight:400;letter-spacing:-.01em;line-height:1.02}
+  h1{font-size:clamp(46px,8vw,92px)}
+  h2{font-size:clamp(38px,5.4vw,62px)}
+  h3{font:800 20px/1.3 var(--text);letter-spacing:-.005em}
+  h1 em,h2 em{font-style:italic;color:var(--accent)}
+  p{margin:0 0 14px}
+  .lead{font-size:clamp(18px,2.3vw,20px);color:var(--muted);max-width:660px}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+  .eyebrow:before{content:"";width:18px;height:2px;background:currentColor;border-radius:2px}
+  .center{text-align:center}
+  .center .lead{margin-left:auto;margin-right:auto}
+  .center .eyebrow{justify-content:center}
+  .muted{color:var(--muted)}
+  .hidden{display:none!important}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--accent);color:#fff;font:700 17px var(--text);text-decoration:none;border:0;border-radius:999px;padding:17px 30px;cursor:pointer;transition:background .15s,transform .15s,box-shadow .15s;box-shadow:0 10px 24px -12px rgba(79,70,229,.7)}
+  .btn:hover{background:var(--accent-dark)}
+  .btn:active{transform:scale(.98)}
+  .btn[disabled]{opacity:.6;cursor:wait}
+  .btn.line{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
+  .btn.line:hover{box-shadow:inset 0 0 0 1.5px var(--ink)}
+  .btn.lime{background:var(--lime);color:var(--lime-ink);box-shadow:0 10px 24px -12px rgba(150,190,40,.8)}
+  .btn.lime:hover{background:#B9E648}
+  .btn svg{width:18px;height:18px;flex:none}
+  :focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+
+  /* NAGŁÓWEK */
+  .hero{position:relative;overflow:hidden;padding-block:18px 84px;background:radial-gradient(900px 520px at 85% 10%,#E4E2FF 0%,transparent 60%),radial-gradient(1000px 640px at 0% 100%,#D4F77E 0%,#E6FBB0 32%,rgba(240,255,214,.6) 52%,transparent 72%),var(--bg)}
+  .top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:8px 52px}
+  .logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font:400 28px/1 var(--serif)}
+  .logo svg,.logo img{width:40px;height:40px;flex:none;border-radius:50%;object-fit:cover}
+  .top a.small{font-weight:700;font-size:15px;text-decoration:none;color:var(--ink);padding:9px 18px;border-radius:999px;box-shadow:inset 0 0 0 1.5px var(--line);white-space:nowrap}
+  .hero-grid{display:grid;gap:40px;align-items:center}
+  @media(min-width:900px){.hero-grid{grid-template-columns:1.15fr .85fr}}
+  .slogan{font:italic 400 clamp(26px,3.4vw,36px)/1.15 var(--serif);margin:14px 0 0;color:var(--ink)}
+  .slogan span{background:linear-gradient(transparent 62%,var(--lime) 62%);padding:0 4px}
+  .hero .sub{font-size:19px;color:var(--muted);max-width:560px;margin:20px 0 28px}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px}
+  .hero .fine{font-size:14px;color:var(--dim);margin-top:14px}
+
+  /* Oddech: krąg, który rośnie i maleje */
+  .hero-photo{position:relative;margin:0;border-radius:28px;overflow:hidden;aspect-ratio:1/1;width:100%;box-shadow:0 30px 70px -30px rgba(23,21,59,.45)}
+  @media(min-width:900px){.hero-photo{aspect-ratio:4/5;max-width:440px;justify-self:end}}
+  .hero-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 72%}
+  .hero-photo figcaption{position:absolute;left:16px;bottom:16px;background:var(--lime);color:var(--lime-ink);font-weight:800;font-size:14px;letter-spacing:.04em;border-radius:999px;padding:8px 16px;box-shadow:0 10px 24px -12px rgba(26,38,0,.6)}
+  .breath{position:relative;width:min(340px,64vw);aspect-ratio:1;margin:0 auto;display:grid;place-items:center}
+  .breath .ring{position:absolute;inset:0;border-radius:50%;border:1.5px solid #CFCBF7}
+  .breath .ring.r2{inset:12%;border-color:#DCD9FA}
+  .breath .core{width:44%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 30%,#8E88FF,var(--accent) 60%,#3A32B8);box-shadow:0 30px 60px -20px rgba(79,70,229,.6);animation:breathe 16s ease-in-out infinite}
+  .breath .lbl{position:absolute;bottom:-6px;left:0;right:0;text-align:center;font-weight:700;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .breath .lbl b{color:var(--accent)}
+  @keyframes breathe{0%{transform:scale(1)}25%{transform:scale(1.75)}50%{transform:scale(1.75)}75%{transform:scale(1)}100%{transform:scale(1)}}
+  @media(prefers-reduced-motion:reduce){.breath .core{animation:none;transform:scale(1.4)}}
+
+  /* FILM */
+  .video{position:relative;aspect-ratio:9/16;max-width:380px;margin:30px auto 0;border-radius:var(--r);overflow:hidden;background:var(--card);border:1px solid var(--line);color:var(--muted);display:grid;place-items:center;text-align:center}
+  .video button{all:unset;cursor:pointer;position:absolute;inset:0;display:grid;place-items:center;background-size:cover;background-position:center}
+  .video .play{width:80px;height:80px;border-radius:50%;background:var(--accent);display:grid;place-items:center;box-shadow:0 10px 30px rgba(23,21,59,.35)}
+  .video .play:after{content:"";border-left:24px solid #fff;border-top:15px solid transparent;border-bottom:15px solid transparent;margin-left:6px}
+  .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .video .soon{padding:24px;font:italic 400 28px var(--serif)}
+  .sample{display:flex;align-items:center;gap:18px;max-width:520px;margin:30px auto 0;padding:20px;border-radius:var(--r);background:var(--ink,#17153B);color:#fff;text-align:left;box-shadow:0 26px 54px -30px rgba(23,21,59,.55)}
+  .sample-play{flex:none;width:68px;height:68px;border-radius:50%;border:0;background:#C8F25C;color:#1A2600;display:grid;place-items:center;cursor:pointer}
+  .sample-play svg{width:26px;height:26px;fill:currentColor}
+  .sample-body{flex:1;min-width:0}
+  .sample-body small{display:block;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#C8F25C}
+  .sample-body b{display:block;font:400 28px/1.1 var(--serif);margin:2px 0 10px}
+  .sample-bar{height:6px;border-radius:9px;background:rgba(255,255,255,.18);cursor:pointer;position:relative}
+  .sample-bar span{position:absolute;left:0;top:0;bottom:0;width:0;border-radius:9px;background:#C8F25C}
+  .sample-time{display:flex;justify-content:space-between;margin-top:6px;font-size:12.5px;color:#CFCBF7;font-variant-numeric:tabular-nums}
+  .sample-note{margin:14px auto 0;font-size:14px;color:var(--muted);max-width:520px}
+
+  /* KARTY */
+  .grid{display:grid;gap:14px;margin-top:36px}
+  @media(min-width:760px){.grid.two{grid-template-columns:1fr 1fr}.grid.three{grid-template-columns:repeat(3,1fr)}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:28px}
+  .card p{color:var(--muted)}
+  .card p:last-child{margin:0}
+  .card .ill{background:var(--bg);border-radius:14px;margin:-12px -12px 20px;overflow:hidden}
+  .card .ill img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+  .js .card.rv .ill img{transform:scale(1.12);transition:transform 1.4s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0ms)}
+  .js .card.rv.in .ill img{transform:none}
+  .card .ic{width:46px;height:46px;border-radius:14px;background:var(--accent-soft);display:grid;place-items:center;margin-bottom:16px}
+  .card .ic svg{width:24px;height:24px;stroke:var(--accent);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+  .chip{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-weight:600;font-size:15px;color:var(--muted)}
+  .chip.hot{background:var(--ink);border-color:var(--ink);color:#fff}
+  .alt{background:var(--bg2)}
+  .phase small{display:inline-block;font-weight:800;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--lime-ink);background:var(--lime);border-radius:999px;padding:4px 12px;margin-bottom:14px}
+
+  /* OŚ CZASU (co się dzieje po rzuceniu) */
+  .timeline{list-style:none;margin:40px 0 0;padding:0;display:grid;gap:12px}
+  @media(min-width:760px){.timeline{grid-template-columns:repeat(4,1fr)}}
+  .timeline li{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 20px 18px;position:relative}
+  .timeline b{display:block;font:400 34px/1 var(--serif);color:var(--accent);margin-bottom:8px}
+  .timeline span{color:var(--muted);font-size:15px;line-height:1.5}
+  .src{font-size:13px;color:var(--dim);margin-top:18px}
+  .timeline li{margin-top:26px;padding-right:66px}
+  .timeline li:before{content:"";position:absolute;top:-17px;left:0;right:0;height:2px;background:var(--line)}
+  @media(min-width:760px){.timeline li:before{right:-12px}.timeline li:nth-child(4n):before{right:0}}
+  .timeline li:after{content:"";position:absolute;top:-23px;left:22px;width:14px;height:14px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--bg)}
+  .timeline li.yr:after{background:var(--lime);border:2px solid var(--lime-ink);width:10px;height:10px}
+  .tl-ic{position:absolute;top:18px;right:18px;width:38px;height:38px;border-radius:12px;background:var(--accent-soft);display:grid;place-items:center}
+  .tl-ic svg{width:20px;height:20px;stroke:var(--accent);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .nic-box{margin-top:28px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:28px;display:grid;gap:22px}
+  @media(min-width:860px){.nic-box{grid-template-columns:1fr 1.25fr;align-items:center}}
+  .nic-box h3{margin:0 0 8px}.nic-box p{color:var(--muted);margin:0}
+  .nic-steps{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+  @media(min-width:560px){.nic-steps{grid-template-columns:repeat(3,1fr)}}
+  .nic-steps li{background:var(--accent-soft);border-radius:14px;padding:16px}
+  .nic-steps b{display:block;font:400 26px/1.05 var(--serif);color:var(--accent);margin-bottom:6px}
+  .nic-steps span{font-size:14px;color:var(--muted);line-height:1.45}
+  .src a{color:inherit}
+
+  /* CIEMNY PAS */
+  .night{background:var(--night);color:var(--night-ink)}
+  .night .lead,.night .muted,.night p{color:var(--night-muted)}
+  .night h2 em{color:var(--lime)}
+  .night .eyebrow{color:var(--lime)}
+
+  /* APLIKACJA */
+  .app-grid{display:grid;gap:40px;align-items:center;margin-top:36px}
+  @media(min-width:900px){.app-grid{grid-template-columns:300px 1fr}}
+  .phone-wrap{display:flex;flex-direction:column;align-items:center;gap:14px}
+  .phone{width:270px;margin:0 auto;background:#0F0D2B;border-radius:44px;padding:11px;box-shadow:0 40px 80px -30px rgba(23,21,59,.55);overflow:hidden;touch-action:pan-y}
+  .slides{display:flex;transition:transform .6s cubic-bezier(.65,0,.35,1)}
+  .screen{flex:0 0 100%;position:relative;background:#F6F5FF;color:var(--ink);border-radius:34px;padding:24px 16px 60px;min-height:500px;display:flex;flex-direction:column;gap:10px;overflow:hidden;font-family:var(--text)}
+  .s-day{font-size:11px;color:var(--muted);font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+  .s-big{font:400 40px/1 var(--serif)}
+  .s-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px 12px;font-size:13px;line-height:1.4}
+  .s-card small{display:block;color:var(--muted);font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px}
+  .s-stats{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .s-stats .s-card b{display:block;font:400 26px/1.1 var(--serif);color:var(--accent)}
+  .s-btn{border-radius:999px;padding:11px;text-align:center;font-weight:800;font-size:14px}
+  .s-btn.g{background:var(--accent);color:#fff}.s-btn.l{background:var(--lime);color:var(--lime-ink)}
+  .s-row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .s-title{font:400 30px/1.05 var(--serif);margin-bottom:2px}
+  .s-chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:4px}
+  .s-chips b{font-weight:700;font-size:11px;border:1px solid var(--line);border-radius:99px;padding:4px 9px;background:#fff}
+  .s-chips b.on{background:var(--ink);border-color:var(--ink);color:#fff}
+  .s-range{height:6px;border-radius:9px;background:var(--line);margin-top:8px}.s-range i{display:block;height:100%;background:var(--accent);border-radius:9px}
+  .s-orb{width:120px;height:120px;margin:10px auto 4px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#8E88FF,var(--accent) 60%,#3A32B8);display:grid;place-items:center;color:#fff;text-align:center;animation:sorb 8s ease-in-out infinite}
+  .s-orb b{display:block;font:400 40px/1 var(--serif)}.s-orb span{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+  @keyframes sorb{0%,100%{transform:scale(.86)}50%{transform:scale(1)}}
+  .s-cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-top:6px}
+  .s-cal i{aspect-ratio:1;border-radius:4px;background:var(--line)}
+  .s-cal i.ok{background:var(--accent)}.s-cal i.slip{background:#C9C6E8}.s-cal i.today{box-shadow:0 0 0 2px var(--lime) inset}
+  .s-nav{position:absolute;left:0;right:0;bottom:0;display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border-top:1px solid var(--line);padding:11px 4px 13px;font-size:10px;font-weight:800;color:var(--dim);text-align:center}
+  .s-nav .on{color:var(--accent)}
+  .phone-dots{display:flex;gap:8px}
+  .phone-dots button{width:26px;height:6px;border-radius:99px;border:0;background:#47437F;cursor:pointer;padding:0;transition:background .3s,width .3s}
+  .phone-dots button[aria-selected="true"]{background:var(--lime);width:44px}
+  .phone-cap{font-weight:800;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--lime);margin:0}
+  @media(prefers-reduced-motion:reduce){.slides{transition:none}.s-orb{animation:none}}
+  .feats{display:grid;gap:12px}
+  @media(min-width:640px){.feats{grid-template-columns:1fr 1fr}}
+  .feat{display:flex;gap:16px;align-items:flex-start;border-radius:16px;padding:14px;cursor:pointer;transition:background .2s}
+  .feat:hover,.feat.active{background:var(--night2)}
+  .feat .ic{flex:0 0 44px;height:44px;border-radius:12px;background:rgba(200,242,92,.12);display:grid;place-items:center}
+  .feat .ic svg{width:22px;height:22px;stroke:var(--lime);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .feat h3{color:var(--night-ink);margin-bottom:4px}
+  .feat p{margin:0;font-size:15px}
+
+  /* OFERTA */
+  .offer{display:grid;gap:26px;align-items:center}
+  @media(min-width:860px){.offer{grid-template-columns:1.2fr .8fr}}
+  .check{list-style:none;padding:0;margin:22px 0 0}
+  .check li{position:relative;padding:0 0 14px 38px;color:var(--muted)}
+  .check li b{color:var(--ink);font-weight:700}
+  .check li:before{content:"";position:absolute;left:0;top:2px;width:24px;height:24px;border-radius:50%;background:var(--lime) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231A2600' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center/13px no-repeat}
+  .price{background:var(--night);color:var(--night-ink);border-radius:28px;padding:34px 30px;text-align:center;box-shadow:0 40px 80px -40px rgba(23,21,59,.6)}
+  .price .kicker{font-weight:800;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--lime)}
+  .price .tag{font:400 96px/1 var(--serif);margin:10px 0 12px}
+  .price p{color:var(--night-muted);font-size:15px}
+  .price .btn{width:100%}
+
+  /* DOWÓD */
+  .proof{max-width:660px;margin:30px auto 0;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px;display:flex;flex-direction:column;gap:16px}
+  .proof-h{font-weight:800;font-size:17px}
+  .proof-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:8px;font-size:15px;color:var(--muted)}
+  .proof-top b{color:var(--ink);font-weight:700}
+  .proof .x{font:400 34px/1 var(--serif);color:var(--dim)}
+  .proof .x.a{color:var(--accent)}
+  .track{height:14px;border-radius:99px;background:var(--bg2);overflow:hidden}
+  .fill{display:block;height:100%;width:var(--w);border-radius:99px;background:#C9C6E8;transition:width 1.6s cubic-bezier(.2,.8,.2,1)}
+  .fill.a{background:linear-gradient(90deg,var(--accent),#8E88FF)}
+  .proof.pre .fill{width:0}
+  .proof-note{font-size:13px;color:var(--dim);margin:0}
+  .help{display:flex;gap:14px;align-items:flex-start;max-width:660px;margin:14px auto 0;text-align:left;background:var(--accent-soft);border-radius:16px;padding:16px 18px;font-size:15px;color:var(--ink)}
+  .help svg{width:22px;height:22px;flex:none;stroke:var(--accent);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;margin-top:2px}
+  @media(prefers-reduced-motion:reduce){.fill{transition:none}}
+
+  /* HIPNOZA */
+  .hyp{display:grid;gap:30px;align-items:start}
+  @media(min-width:900px){.hyp{grid-template-columns:.9fr 1.1fr}}
+  .facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+  .fact{border:1px solid var(--line);border-radius:16px;padding:12px 16px;background:var(--card)}
+  .fact b{display:block;font:400 32px/1 var(--serif);color:var(--accent)}
+  .fact span{font-size:13px;color:var(--muted)}
+  .steps{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+  .steps li{display:grid;grid-template-columns:44px 1fr;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px}
+  .steps .n{width:36px;height:36px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-weight:800}
+  .steps h3{margin:4px 0 4px}
+  .steps p{color:var(--muted);margin:0;font-size:16px}
+  .plus{margin-top:14px;border-left:3px solid var(--lime);padding:4px 0 4px 16px;color:var(--ink);font-size:16px}
+
+  /* OPINIE */
+  .quotes{display:grid;gap:14px;margin-top:36px;align-items:start}
+  @media(min-width:760px){.quotes{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:1080px){.quotes{grid-template-columns:repeat(3,1fr)}}
+  .quote{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px;margin:0;display:flex;flex-direction:column;gap:14px;min-width:0}
+  .quote blockquote{margin:0;font:italic 400 22px/1.35 var(--serif);color:var(--ink)}
+  .quote figcaption{font-size:14px;color:var(--muted)}
+  .quote figcaption b{color:var(--ink)}
+
+  /* KIM JESTEM */
+  .about{display:grid;gap:32px;align-items:center}
+  @media(min-width:800px){.about{grid-template-columns:280px 1fr}}
+  .avatar{width:260px;height:325px;max-width:100%;border-radius:140px 140px 24px 24px;margin:0 auto;background:var(--card);border:1px solid var(--line);color:var(--accent);display:grid;place-items:center;font:400 76px var(--serif);overflow:hidden}
+  .avatar img{width:100%;height:100%;object-fit:cover}
+  .about p{color:var(--muted)}
+
+  /* FAQ */
+  details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:0 22px;margin-bottom:10px}
+  summary{cursor:pointer;list-style:none;font-weight:700;font-size:18px;padding:18px 34px 18px 0;position:relative}
+  summary::-webkit-details-marker{display:none}
+  summary:after{content:"+";position:absolute;right:0;top:12px;font-size:28px;color:var(--accent);font-weight:400}
+  details[open] summary:after{content:"−"}
+  details p{color:var(--muted);padding-bottom:6px}
+
+  /* FORMULARZ */
+  .form-box{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:30px 22px;max-width:660px;margin:30px auto 0}
+  label{display:block;font-weight:700;font-size:15px;margin:0 0 6px}
+  .opt{font-weight:400;color:var(--dim)}
+  .two-col{display:grid;gap:0 14px}
+  @media(min-width:560px){.two-col{grid-template-columns:1fr 1fr}}
+  input[type=text],input[type=email],select,textarea{width:100%;font:inherit;font-size:16px;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:13px 14px;margin-bottom:16px;outline:none;transition:border .15s}
+  input::placeholder,textarea::placeholder{color:var(--dim)}
+  input:focus,select:focus,textarea:focus{border-color:var(--accent)}
+  textarea{min-height:90px;resize:vertical}
+  .tick{display:flex;gap:12px;align-items:flex-start;font-weight:400;font-size:14px;color:var(--muted);margin-bottom:14px;cursor:pointer}
+  .tick input{flex:0 0 22px;width:22px;height:22px;margin:1px 0 0;accent-color:var(--accent)}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+  .msg{display:none;border-radius:12px;padding:14px 16px;margin-top:16px;font-weight:600}
+  .msg.err{display:block;background:var(--accent-soft);color:var(--accent-dark)}
+  .done{text-align:center;padding:10px 0}
+  .done .big{font:italic 400 64px/1 var(--serif);color:var(--accent);margin-bottom:10px}
+  .done p{color:var(--muted)}
+
+  .final-cta{padding-block:90px}
+  .final-cta h2{color:var(--night-ink)}
+  .final-cta .lead{margin:14px auto 30px}
+  .btn.big{font-size:20px;padding:20px 40px}
+  footer{padding-block:40px;font-size:14px;color:var(--dim);text-align:center;border-top:1px solid var(--line)}
+  footer p{margin:0 0 6px}
+  footer b{color:var(--ink)}
+
+  .sticky{position:fixed;left:calc(12px + env(safe-area-inset-left,0px));right:calc(12px + env(safe-area-inset-right,0px));bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:20;transform:translateY(160%);transition:transform .3s}
+  .sticky.show{transform:none}
+  .sticky .btn{width:100%;box-shadow:0 14px 30px -10px rgba(23,21,59,.5)}
+  /* Papierosy i e-papierosy (zdjęcia) */
+  .types{display:grid;gap:18px;margin-top:36px}
+  @media(min-width:760px){.types{grid-template-columns:repeat(3,1fr)}}
+  .type .ill-svg{display:block;width:100%;height:auto;aspect-ratio:4/3}
+  .type{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin:0}
+  .type img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:center 45%}
+  .type figcaption{padding:22px 24px 26px}
+  .type h3{margin-bottom:6px}
+  .type p{color:var(--muted);margin:0}
+  .types-note{margin-top:22px;color:var(--muted)}
+  /* Quiz */
+  .quiz{margin-top:46px;background:var(--card);border:1px solid var(--line);border-radius:28px;padding:clamp(22px,4vw,44px);max-width:840px;box-shadow:0 30px 60px -40px rgba(23,21,59,.35)}
+  .quiz .eyebrow{margin-bottom:10px}
+  .quiz h3{font:400 clamp(30px,4vw,44px)/1.05 var(--serif);margin:0 0 22px}
+  .quiz-bar{height:6px;background:var(--accent-soft);border-radius:6px;overflow:hidden;margin-bottom:26px}
+  .quiz-bar span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--lime));transition:width .45s ease}
+  .q-step{font-size:13px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin:0 0 10px}
+  .q-text{font-size:clamp(20px,2.6vw,25px);font-weight:700;color:var(--ink);line-height:1.35;margin:0 0 26px}
+  .q-btns{display:flex;gap:12px;flex-wrap:wrap}
+  .q-btns .btn{min-width:150px}
+  .q-anim{animation:qin .45s cubic-bezier(.2,.7,.2,1)}
+  @keyframes qin{from{opacity:0;transform:translateX(26px)}to{opacity:1;transform:none}}
+  .q-meter{position:relative;height:14px;border-radius:14px;background:linear-gradient(90deg,#E7E6FD,#8E88FF,#3E36C9);margin:6px 0 8px}
+  .q-meter i{position:absolute;top:50%;width:26px;height:26px;margin:-13px 0 0 -13px;border-radius:50%;background:#fff;border:4px solid var(--ink);box-shadow:0 6px 14px -4px rgba(23,21,59,.5);transition:left 1s cubic-bezier(.2,.7,.2,1)}
+  .q-labels{display:flex;justify-content:space-between;font-size:12.5px;color:var(--dim);font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+  .q-level{display:inline-block;background:var(--ink);color:#fff;border-radius:999px;padding:5px 14px;font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin:22px 0 12px}
+  .q-res h4{font:400 clamp(28px,3.4vw,38px)/1.1 var(--serif);margin:0 0 10px;color:var(--ink)}
+  .q-res p{color:var(--muted);margin:0 0 20px;max-width:620px}
+  .q-yes{display:flex;align-items:center;gap:12px;background:var(--lime);color:var(--lime-ink);border-radius:16px;padding:16px 18px;font-weight:800;font-size:clamp(18px,2.2vw,21px);margin:4px 0 22px}
+  .q-yes svg{flex:0 0 30px;width:30px;height:30px}
+  .q-again{background:none;border:0;color:var(--muted);text-decoration:underline;font:600 15px var(--text);cursor:pointer;padding:10px}
+  .q-note{font-size:13px;color:var(--dim);margin:16px 0 0}
+  /* ===== Animacje i efekty (wzór: płynne wejścia, linia pod nagłówkiem, odblask kart) ===== */
+  :root{--ease:cubic-bezier(.16,.68,.24,1)}
+  #prog{position:fixed;top:0;left:0;height:3px;width:0;z-index:100;background:linear-gradient(90deg,var(--accent),var(--lime));transition:width .12s linear}
+  .js [data-a]{opacity:0;transition-property:opacity,transform,clip-path,filter;transition-duration:.9s;transition-timing-function:var(--ease);transition-delay:calc(var(--i,0) * 90ms)}
+  .js [data-a="up"]{transform:translateY(38px)}
+  .js [data-a="left"]{transform:translateX(-46px)}
+  .js [data-a="right"]{transform:translateX(46px)}
+  .js [data-a="scale"]{transform:scale(.92)}
+  .js [data-a="blur"]{filter:blur(14px);transform:translateY(20px)}
+  .js [data-a="clip"]{clip-path:inset(0 0 102% 0);transform:translateY(16px)}
+  .js [data-a="rise"]{transform:translateY(64px) scale(.97)}
+  .js [data-a].in{opacity:1;transform:none;filter:none;clip-path:inset(0 0 0 0)}
+  .js [data-a].a-done{transition-delay:0s;clip-path:none}
+  .js .type[data-a] img,.js .type[data-a] .ill-svg,.js .card[data-a] .ill img,.js .gal-item[data-a] img{transform:scale(1.14);transition:transform 1.6s var(--ease)}
+  .js .type[data-a].in img,.js .type[data-a].in .ill-svg,.js .card[data-a].in .ill img,.js .gal-item[data-a].in img{transform:none}
+  section .wrap h2:after{content:"";display:block;height:3px;width:56px;border-radius:3px;background:linear-gradient(90deg,var(--accent),var(--lime));margin-top:20px}
+  .center h2:after,h2.center:after{margin-left:auto;margin-right:auto}
+  .quiz h2:after,.final-cta h2:after{display:none}
+  .js section .wrap h2[data-a]:after{width:0;transition:width .9s .45s var(--ease)}
+  .js section .wrap h2[data-a].in:after{width:56px}
+  .card,.type{position:relative;overflow:hidden}
+  .card:before,.type:before{content:"";position:absolute;inset:0;pointer-events:none;z-index:3;background:linear-gradient(118deg,transparent 26%,rgba(255,255,255,.55) 44%,transparent 58%);transform:translateX(-120%);transition:transform 1.1s var(--ease)}
+  .card:hover:before,.type:hover:before{transform:translateX(120%)}
+  .card:hover,.type:hover,.card.in:hover,.type.in:hover{transform:translateY(-6px);box-shadow:0 34px 70px -34px rgba(23,21,59,.38)}
+  .card,.type{transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+  /* pasek haseł */
+  .mq{overflow:hidden;padding:18px 0;background:var(--ink)}
+  .mqi{display:flex;align-items:center;gap:34px;width:max-content;animation:mq 42s linear infinite;color:#fff;font-weight:800;font-size:14px;letter-spacing:.22em;text-transform:uppercase}
+  .mqi b{font-weight:800;white-space:nowrap}
+  .mqi i{display:block;width:8px;height:8px;border-radius:50%;background:var(--lime);flex:0 0 8px}
+  @keyframes mq{to{transform:translateX(-50%)}}
+  /* liczby */
+  .stats-sec{padding-block:56px 10px}
+  .stats{display:grid;grid-template-columns:repeat(2,1fr);background:var(--card);border:1px solid var(--line);border-radius:24px;box-shadow:0 30px 60px -44px rgba(23,21,59,.35)}
+  @media(min-width:860px){.stats{grid-template-columns:repeat(4,1fr)}}
+  .stat{position:relative;padding:28px 18px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:8px}
+  .stat b{font:400 clamp(40px,5vw,58px)/1 var(--serif);color:var(--accent)}
+  .stat span:not([data-count]):not([data-price]){font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);max-width:200px;line-height:1.45}
+  .stat:after{content:"";position:absolute;right:0;top:20%;bottom:20%;width:1px;background:var(--line)}
+  .stat:nth-child(2n):after{display:none}
+  @media(min-width:860px){.stat:nth-child(2n):after{display:block}.stat:last-child:after{display:none}}
+  @media(max-width:859px){.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+  /* płuca */
+  .lungs{display:grid;gap:28px;align-items:center;margin-top:8px}
+  @media(min-width:860px){.lungs{grid-template-columns:minmax(0,440px) 1fr;gap:56px}}
+  .lungs-fig{margin:0 auto;max-width:360px;width:100%}
+  @media(min-width:860px){.lungs-fig{max-width:440px}}
+  .lungs-fig img{display:block;width:100%;height:auto;aspect-ratio:1/1;border-radius:28px;box-shadow:0 26px 54px -30px rgba(23,21,59,.45)}
+  .lungs-fig figcaption{display:flex;justify-content:space-between;padding:12px 10% 0;font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+  .lungs-fig .ok{color:#3F8F1C}.lungs-fig .bad{color:var(--accent)}
+  .lungs-txt p{color:var(--muted);font-size:17px;line-height:1.6;margin:0 0 14px}
+  .lungs-txt .btn{margin-top:8px}
+  /* galeria z łukami */
+  .gal{display:grid;gap:18px 14px;margin:36px auto 0;grid-template-columns:repeat(2,1fr);max-width:1000px}
+  @media(min-width:900px){.gal{grid-template-columns:repeat(4,1fr)}}
+  .gal-item{margin:0}
+  .gal-pic{overflow:hidden;border-radius:999px 999px 18px 18px;max-width:200px;margin:0 auto;box-shadow:0 26px 54px -28px rgba(23,21,59,.45)}
+  .gal-pic img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover}
+  .gal-item:hover .gal-pic img{transform:scale(1.05)!important;transition:transform .9s var(--ease)}
+  .gal-item figcaption{padding:12px 2px 0;text-align:center}
+  .gal-item b{display:block;font:400 clamp(19px,2.2vw,24px)/1.15 var(--serif);color:var(--ink);margin-bottom:4px}
+  .gal-item span{display:block;color:var(--muted);font-size:14px;line-height:1.45}
+  @media(max-width:560px){.gal-pic{max-width:150px}.gal-item span{font-size:13px}}
+  /* pas ze zdjęciem */
+  .band{position:relative;overflow:hidden;isolation:isolate;min-height:clamp(380px,48vw,580px);display:flex;align-items:center;padding-block:80px}
+  .band-bg{position:absolute;left:0;top:-12%;width:100%;height:124%;object-fit:cover;z-index:-2;will-change:transform}
+  .band:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(23,21,59,.66),rgba(23,21,59,.5) 45%,rgba(23,21,59,.78))}
+  .band .eyebrow{color:var(--lime)}
+  .band h2{color:#fff;max-width:900px;margin:0 auto;font-size:clamp(32px,4.6vw,56px);text-shadow:0 2px 30px rgba(0,0,0,.35)}
+  .band h2 em{color:var(--lime)}
+  .band-sig{margin-top:24px;color:rgba(255,255,255,.72);font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+  @media(prefers-reduced-motion:reduce){.js [data-a]{opacity:1!important;transform:none!important;filter:none!important;clip-path:none!important;transition:none!important}.mqi{animation:none}.js section .wrap h2[data-a]:after{width:56px}}
+  /* Oś czasu od dziś */
+  .tl-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0 6px}
+  .tl-tabs button{font:600 15px var(--text);padding:10px 18px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--muted);cursor:pointer;transition:background .2s,color .2s}
+  .tl-tabs button[aria-selected=true]{background:var(--ink);border-color:var(--ink);color:#fff}
+  .otl-note{color:var(--muted);font-size:15px;margin:10px 0 0;max-width:640px}
+  .otl{position:relative;margin-top:30px}
+  .otl ol{list-style:none;margin:0;padding:0 0 0 38px;position:relative}
+  .otl-line{position:absolute;left:11px;top:10px;bottom:30px;width:3px;background:var(--line);border-radius:3px;overflow:hidden}
+  .otl-line span{position:absolute;inset:0;background:linear-gradient(var(--accent),var(--lime));transform-origin:top}
+  .otl li{position:relative;padding-bottom:28px}
+  .otl .dot{position:absolute;left:-35px;top:3px;width:18px;height:18px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px var(--bg)}
+  .otl li.st .dot{background:var(--lime);border:3px solid var(--lime-ink)}
+  .otl .when{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;background:var(--lime);color:var(--lime-ink);border-radius:999px;padding:3px 10px;margin-bottom:8px}
+  .otl .lbl b{display:block;font:400 30px/1.05 var(--serif);color:var(--accent);margin-bottom:4px}
+  .otl li.st .lbl b{color:var(--ink)}
+  .otl .lbl p{margin:0;color:var(--muted);font-size:15.5px;line-height:1.5}
+  .otl.anim .otl-line span{transform:scaleY(0);transition:transform 2s cubic-bezier(.4,0,.2,1)}
+  .otl.anim .dot{transform:scale(0);transition:transform .45s cubic-bezier(.3,1.6,.5,1);transition-delay:calc(var(--i,0) * 180ms)}
+  .otl.anim .lbl{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease;transition-delay:calc(var(--i,0) * 180ms + 90ms)}
+  .otl.anim.go .otl-line span,.otl.anim.go .dot,.otl.anim.go .lbl{transform:none;opacity:1}
+  @media(min-width:960px){
+    .otl ol{padding:0;display:grid;grid-template-columns:repeat(var(--n,9),1fr);height:440px}
+    .otl-line{left:0;right:0;top:50%;bottom:auto;width:auto;height:3px;margin-top:-1.5px}
+    .otl-line span{background:linear-gradient(90deg,var(--accent),var(--lime));transform-origin:left}
+    .otl.anim .otl-line span{transform:scaleX(0)}
+    .otl li{padding:0}
+    .otl .dot{left:50%;top:50%;margin:-9px 0 0 -9px}
+    .otl li:after{content:"";position:absolute;left:50%;width:2px;height:16px;margin-left:-1px;background:var(--line)}
+    .otl li:nth-child(odd):after{bottom:calc(50% + 12px)}
+    .otl li:nth-child(even):after{top:calc(50% + 12px)}
+    .otl .lbl{position:absolute;left:50%;width:calc(200% - 18px);max-width:250px;translate:-50% 0;text-align:center}
+    .otl li:nth-child(odd) .lbl{bottom:calc(50% + 34px)}
+    .otl li:nth-child(even) .lbl{top:calc(50% + 34px)}
+    .otl li:first-child .lbl{left:0;width:calc(150% - 12px);translate:none;text-align:left}
+    .otl li:last-child .lbl{left:auto;right:0;width:calc(150% - 12px);translate:none;text-align:right}
+    .otl .lbl b{font-size:28px}
+    .otl .lbl p{font-size:14.5px}
+  }
+  @media(prefers-reduced-motion:reduce){.otl.anim .otl-line span,.otl.anim .dot,.otl.anim .lbl{transform:none!important;opacity:1!important;transition:none!important}}
+  /* Animacje przy przewijaniu (działają tylko z JS; bez JS wszystko jest widoczne) */
+  .js .rv{opacity:0;transform:translateY(34px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0ms)}
+  .js .rv.in{opacity:1;transform:none}
+  .js .type.rv img,.js .type.rv .ill-svg{transform:scale(1.12);transition:transform 1.4s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0ms)}
+  .js .type.rv.in img,.js .type.rv.in .ill-svg{transform:none}
+  .js .rv .draw{transition:stroke-dashoffset 1.8s cubic-bezier(.4,0,.2,1) calc(var(--d,0ms) + .3s)}
+  .js .rv .pop{transform-box:fill-box;transform-origin:center;transform:scale(0);transition:transform .5s cubic-bezier(.3,1.6,.5,1)}
+  .js .rv.in .pop{transform:none}
+  .js .timeline li.rv:after{transform:scale(0);transition:transform .5s cubic-bezier(.3,1.6,.5,1) calc(var(--d,0ms) + .25s)}
+  .js .timeline li.rv.in:after{transform:none}
+  @media(prefers-reduced-motion:reduce){.js .rv,.js .rv.in,.js .type.rv img,.js .type.rv .ill-svg,.js .card.rv .ill img,.js .rv .pop,.js .timeline li.rv:after{opacity:1!important;transform:none!important}}
+  @media(min-width:940px){.sticky{display:none}}
+  @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/logo-192.png">
+</head>
+<body>
+<div id="prog" aria-hidden="true"></div>
+
+<!-- 1. NAGŁÓWEK -->
+<header class="hero">
+  <div class="wrap">
+    <div class="top">
+      <a class="logo" href="#" aria-label="Strona główna">
+        <img src="img/logo-128.png" alt="" width="40" height="40">
+        <span data-brand>Wolne Płuco</span>
+      </a>
+      <a class="small" href="#zapis">Dołącz</a>
+    </div>
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">Program 90 dni · Tomasz Świadomość</span>
+        <h1>Chcesz rzucić palenie i <em>ciągle wracasz?</em></h1>
+        <p class="slogan"><span>Wyjdziesz z tego bez siły woli.</span></p>
+        <p class="sub">Nikotyna nic Ci nie daje. Kiedy naprawdę to zrozumiesz, rzucenie przestaje być walką. Krótkie lekcje audio, jedno ćwiczenie dziennie i spotkania na żywo prowadzą Cię przez 90 dni. Papierosy, e-papierosy i saszetki.</p>
+        <div class="cta-row">
+          <a class="btn" href="#zapis">Dołączam</a>
+          <a class="btn line" href="#czytaj">Posłuchaj lekcji 1
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
+        </div>
+        <p class="fine">Bez App Store. Działa na każdym telefonie.</p>
+      </div>
+      <figure class="hero-photo">
+        <img src="img/tomasz-oddech.jpg" alt="Tomasz z rozłożonymi ramionami wśród zielonych tarasów ryżowych" width="1100" height="1719">
+        <figcaption>Oddychaj pełną piersią</figcaption>
+      </figure>
+    </div>
+  </div>
+</header>
+
+<!-- 1a. PASEK HASEŁ + LICZBY -->
+<div class="mq" aria-hidden="true"><div class="mqi"><b>Papierosy</b><i></i><b>E-papierosy</b><i></i><b>Snus i saszetki</b><i></i><b>Aplikacja w telefonie</b><i></i><b>Spotkania na żywo</b><i></i><b>Lekcje audio</b><i></i><b>90 dni</b><i></i><b>Płacisz raz</b><i></i><b>Papierosy</b><i></i><b>E-papierosy</b><i></i><b>Snus i saszetki</b><i></i><b>Aplikacja w telefonie</b><i></i><b>Spotkania na żywo</b><i></i><b>Lekcje audio</b><i></i><b>90 dni</b><i></i><b>Płacisz raz</b><i></i></div></div>
+
+<section class="stats-sec">
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat"><b><span data-count="90">90</span></b><span>dni programu krok po kroku</span></div>
+      <div class="stat"><b><span data-count="3">3</span></b><span>formy nikotyny: papierosy, e-papierosy, snus</span></div>
+      <div class="stat"><b><span data-count="5">5</span></b><span>minut dziennie w aplikacji</span></div>
+      <div class="stat"><b><span data-price>87 zł</span></b><span>płacisz raz, bez abonamentu</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 1b. PAPIEROSY I E-PAPIEROSY -->
+<!-- Zdjęcia: Unsplash (licencja Unsplash, bez wymaganego podpisu).
+     papierosy.jpg: Andres Siimon, https://unsplash.com/photos/ryBnRg4c3L0
+     e-papierosy.jpg: Olena Bohovyk, https://unsplash.com/photos/Y0ishe3KOSU
+     snus.jpg: U.S. Food and Drug Administration, domena publiczna, https://commons.wikimedia.org/wiki/File:Nicotine_pouch_canister_containing_pouches.jpg
+     nikotyna.jpg: https://unsplash.com/photos/7USMFYqt1NI
+     nawyk.jpg: Vidak, https://unsplash.com/photos/Tpc8qe_LsyQ
+     emocje.jpg: Vitaly Gariev, https://unsplash.com/photos/xQ93cUceb74 -->
+<section class="alt">
+  <div class="wrap">
+    <span class="eyebrow">Papierosy, e-papierosy, snus</span>
+    <h2>Palisz, wapujesz czy snusujesz? <em>To ta sama nikotyna</em></h2>
+    <p class="lead">Nieważne, czy sięgasz po paczkę, jednorazówkę czy saszetkę. Głód jest ten sam, więc i wyjście jest to samo. Program jest dla każdej formy nikotyny.</p>
+    <div class="types">
+      <figure class="type">
+        <img src="img/papierosy.jpg" alt="Tlący się papieros odłożony na krawędź parapetu" width="1200" height="900" loading="lazy">
+        <figcaption><h3>Papierosy</h3><p>Zwykłe, slimy, skręcane. Każdy kolejny gasi tylko głód po poprzednim.</p></figcaption>
+      </figure>
+      <figure class="type">
+        <img src="img/e-papierosy.jpg" alt="Dwie dłonie trzymające jednorazowe e-papierosy" width="900" height="1125" loading="lazy">
+        <figcaption><h3>E-papierosy</h3><p>Jednorazówki, pody, liquidy. Brak dymu nie oznacza braku nikotyny.</p></figcaption>
+      </figure>
+      <figure class="type">
+        <img src="img/snus.jpg" alt="Otwarta puszka z białymi saszetkami nikotynowymi" width="800" height="600" loading="lazy">
+        <figcaption><h3>Snus i saszetki</h3><p>Torebeczka pod wargę: z tytoniem albo „tobacco free”. Nikotyna działa tak samo.</p></figcaption>
+      </figure>
+    </div>
+    <p class="types-note">Podgrzewacz tytoniu? Też dobrze trafiłeś.</p>
+  </div>
+</section>
+
+<!-- 2. FILM -->
+<section id="czytaj">
+  <div class="wrap center">
+    <span class="eyebrow">Zacznij tutaj · lekcja 1 za darmo</span>
+    <h2>Posłuchaj pierwszej lekcji. <em>2 minuty.</em></h2>
+    <p class="lead">Tak brzmi każdy dzień programu. Dowiesz się, dlaczego rzucanie wydaje się trudne i dlaczego wcale nie musi takie być.</p>
+    <div class="sample" id="sample">
+      <button class="sample-play" type="button" id="sPlay" aria-label="Odtwórz lekcję 1"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="7 4 20 12 7 20 7 4"/></svg></button>
+      <div class="sample-body">
+        <small>Lekcja 1 z 7</small>
+        <b>Pułapka</b>
+        <div class="sample-bar" id="sBar"><span id="sFill"></span></div>
+        <div class="sample-time"><span id="sCur">0:00</span><span id="sDur">2:18</span></div>
+      </div>
+      <audio id="sAudio" src="audio/lekcja-1.mp3" preload="none"></audio>
+    </div>
+    <p class="sample-note">Przez pierwszy tydzień palisz normalnie. Słuchasz i robisz jedno ćwiczenie dziennie.</p>
+  </div>
+</section>
+
+<!-- 3. EDUKACJA -->
+<section class="alt">
+  <div class="wrap">
+    <span class="eyebrow">Dlaczego tak trudno rzucić</span>
+    <h2>Trzy rzeczy trzymają Cię <em>przy nikotynie</em></h2>
+    <p class="lead">Kiedy rzucasz siłą woli, walczysz z nimi i czujesz, że coś tracisz. Kiedy je zrozumiesz, nie ma z czym walczyć.</p>
+    <div class="grid three">
+      <div class="card"><div class="ill"><img src="img/nikotyna.jpg" alt="Stos wypalonych niedopałków" width="900" height="506" loading="lazy"></div><h3>Nikotyna</h3><p>Znika z ciała w kilka godzin i zostawia lekkie, puste uczucie. Kolejny papieros, buch czy saszetka je gasi. Ta ulga to nie przyjemność, tylko koniec głodu, który sama zrobiła. Po kilku dniach bez nikotyny ten głód słabnie.</p></div>
+      <div class="card"><div class="ill"><img src="img/nawyk.jpg" alt="Ręka z papierosem przy kubku kawy i popielniczce" width="900" height="506" loading="lazy"></div><h3>Nawyk</h3><p>Kawa, telefon, samochód, przerwa w pracy. Głowa połączyła te chwile z nikotyną. To tylko skojarzenia. Kiedy przestajesz wierzyć, że czegoś Ci brakuje, same słabną.</p></div>
+      <div class="card"><div class="ill"><img src="img/emocje.jpg" alt="Zestresowany mężczyzna trzyma się za głowę przy laptopie" width="900" height="506" loading="lazy"></div><h3>Przekonanie</h3><p>Najmocniej trzyma wiara, że nikotyna pomaga na stres, nudę i złość. Wbudowały ją filmy, otoczenie i reklama. Kiedy ją rozbroisz, nie ma za czym tęsknić i nie musisz niczego zastępować.</p></div>
+    </div>
+    <div class="quiz" id="quiz">
+      <span class="eyebrow">Szybki test · 6 pytań · 30 sekund</span>
+      <h3>Sprawdź, jak bardzo jesteś uzależniony</h3>
+      <div class="quiz-bar"><span id="qBar"></span></div>
+      <div id="qBody"><p class="q-text">Test działa w przeglądarce z włączonym JavaScriptem.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3b. ZDROWE PŁUCO VS PŁUCO PALACZA (grafika od Tomasza) -->
+<section>
+  <div class="wrap">
+    <div class="lungs">
+      <figure class="lungs-fig"><img src="img/pluca.jpg" alt="Grafika: po lewej zdrowe, zielone płuco, po prawej ciemne, zniszczone płuco palacza" width="900" height="900" loading="lazy"><figcaption><span class="ok">Zdrowe płuco</span><span class="bad">Płuco palacza</span></figcaption></figure>
+      <div class="lungs-txt">
+        <span class="eyebrow">Zdrowe płuco vs. płuco palacza</span>
+        <h2>Każdy dzień bez nikotyny to <em>czystszy oddech</em></h2>
+        <p>Dym osiada w płucach latami. Wapowanie też nie jest dla nich obojętne. Dobra wiadomość jest taka, że ciało zaczyna się regenerować od pierwszego dnia, w którym przestajesz.</p>
+        <p>Zobacz niżej, co dzieje się z Tobą dzień po dniu.</p>
+        <a class="btn line" href="#od-dzis">Pokaż oś czasu</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. OŚ CZASU OD DZIŚ (daty liczone w przeglądarce) -->
+<section id="od-dzis">
+  <div class="wrap">
+    <span class="eyebrow">Twoje ciało pamięta, jak oddychać</span>
+    <h2>Co się stanie, jeśli przestaniesz <em>od dziś?</em></h2>
+    <p class="lead">Dziś jest <b data-today>dziś</b>. Tak może wyglądać Twój kalendarz.</p>
+    <div class="tl-tabs" role="tablist" aria-label="Co rzucasz">
+      <button type="button" role="tab" aria-selected="true" data-k="pap">Papierosy</button>
+      <button type="button" role="tab" aria-selected="false" data-k="vape">E-papierosy</button>
+      <button type="button" role="tab" aria-selected="false" data-k="snus">Snus i saszetki</button>
+    </div>
+    <p class="otl-note" id="otlNote" hidden>E-papierosy i snus nie dają dymu, więc część zmian z osi dla papierosów Ciebie nie dotyczy. Głód nikotynowy jest jednak ten sam.</p>
+    <div class="otl" id="otl">
+      <div class="otl-line" aria-hidden="true"><span></span></div>
+      <ol id="otlList">
+        <li class="st"><span class="dot"></span><div class="lbl"><span class="when">Dziś</span><b>Start</b><p>Ostatni papieros</p></div></li>
+        <li><span class="dot"></span><div class="lbl"><b>20 minut</b><p>Spada tętno i ciśnienie krwi.</p></div></li>
+        <li><span class="dot"></span><div class="lbl"><b>12 godzin</b><p>Poziom tlenku węgla we krwi wraca do normy.</p></div></li>
+        <li><span class="dot"></span><div class="lbl"><b>2 do 12 tygodni</b><p>Poprawia się krążenie i wydolność płuc.</p></div></li>
+        <li><span class="dot"></span><div class="lbl"><b>1 do 9 miesięcy</b><p>Mniej kaszlu i zadyszki.</p></div></li>
+        <li><span class="dot"></span><div class="lbl"><b>1 rok</b><p>Ryzyko choroby wieńcowej spada mniej więcej o połowę.</p></div></li>
+        <li><span class="dot"></span><div class="lbl"><b>5 lat</b><p>Ryzyko udaru zaczyna spadać do poziomu osoby niepalącej.</p></div></li>
+        <li><span class="dot"></span><div class="lbl"><b>10 lat</b><p>Ryzyko raka płuca jest mniej więcej o połowę niższe niż u palacza.</p></div></li>
+        <li><span class="dot"></span><div class="lbl"><b>15 lat</b><p>Ryzyko choroby wieńcowej jak u osoby, która nigdy nie paliła.</p></div></li>
+      </ol>
+    </div>
+    <p class="src">Źródła: WHO, „Health benefits of smoking cessation”; <a href="https://www.nhs.uk/better-health/quit-smoking/staying-smoke-free/managing-nicotine-withdrawal-symptoms" target="_blank" rel="noopener">NHS, „Managing nicotine withdrawal symptoms”</a>; <a href="https://www.health.gov.au/topics/smoking-vaping-and-tobacco/how-to-quit/what-it-feels-like" target="_blank" rel="noopener">Australian Government, „What quitting feels like”</a>. Daty są orientacyjne, u każdego przebiega to inaczej.</p>
+  </div>
+</section>
+
+<!-- 4b. CO ODZYSKUJESZ (galeria) -->
+<!-- Zdjęcia: Unsplash. kawa: Savvas Kalimeris KNlTOJvAkNo; schody: A B (@bfhh_55) t-GlkiE9SD4; bliscy: HptxPPct2d4; energia: Brayden Prato OrosuvvJUhY; gory: Gaurav K CV7KPRM6fHc -->
+<section class="alt">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Co odzyskujesz</span>
+      <h2>Wolność <em>decydowania.</em></h2>
+      <p class="lead">Papieros, buch czy saszetka niczego Ci nie dają. Kiedy znikają, wraca to, co naprawdę Twoje.</p>
+    </div>
+    <div class="gal">
+      <figure class="gal-item"><div class="gal-pic"><img src="img/kawa.jpg?v=2" alt="Mężczyzna z kubkiem kawy na balkonie o wschodzie słońca" width="700" height="700" loading="lazy"></div><figcaption><b>Poranna kawa smakuje kawą</b><span>Bez pośpiechu, bez wychodzenia na mróz i bez zapachu dymu na palcach.</span></figcaption></figure>
+      <figure class="gal-item"><div class="gal-pic"><img src="img/schody.jpg?v=2" alt="Mężczyzna z plecakiem wchodzi po kamiennych schodach" width="700" height="700" loading="lazy"></div><figcaption><b>Schody bez zadyszki</b><span>Wchodzisz na piętro i nie musisz łapać oddechu.</span></figcaption></figure>
+      <figure class="gal-item"><div class="gal-pic"><img src="img/bliscy.jpg?v=2" alt="Tata trzyma synka za rękę nad morzem" width="700" height="700" loading="lazy"></div><figcaption><b>Czas dla bliskich</b><span>Nie wychodzisz „na chwilę”. Jesteś obecny cały czas.</span></figcaption></figure>
+      <figure class="gal-item"><div class="gal-pic"><img src="img/energia.jpg?v=2" alt="Mężczyzna z rozłożonymi ramionami na szczycie góry" width="700" height="700" loading="lazy"></div><figcaption><b>Energia na więcej</b><span>Pieniądze i siły idą na to, co naprawdę lubisz.</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- 4c. PAS ZE ZDJĘCIEM I CYTATEM -->
+<section class="band">
+  <img class="band-bg" src="img/gory.jpg" alt="" aria-hidden="true" loading="lazy">
+  <div class="wrap center band-inner">
+    <span class="eyebrow">Słowo od Tomasza</span>
+    <h2>Nie rzucasz czegoś cennego.<br><em>Wychodzisz z pułapki,</em> w którą nikt nie chciał wpaść.</h2>
+    <p class="band-sig">Tomasz Świadomość · trener mentalny</p>
+  </div>
+</section>
+
+<!-- 5. PROGRAM -->
+<section class="alt">
+  <div class="wrap">
+    <span class="eyebrow">Jak to działa</span>
+    <h2>Program <em>90 dni</em></h2>
+    <p class="lead">Nie rzucasz siłą woli. Najpierw rozumiesz, że nic nie tracisz. Potem jest jeden ostatni papieros i od tej chwili jesteś wolny.</p>
+    <div class="grid three">
+      <div class="card phase"><small>Dni 1 do 7</small><h3>Zrozumienie</h3><p>Jedna lekcja audio na 2 do 3 minut i jedno ćwiczenie dziennie. Palisz, wapujesz czy snusujesz normalnie, niczego nie ograniczasz. Krok po kroku widzisz, że nikotyna nic Ci nie daje.</p></div>
+      <div class="card phase"><small>Dzień zero i dni 8 do 28</small><h3>Wolność od pierwszej chwili</h3><p>Ostatni papieros, buch albo saszetka i licznik wolności rusza. Codziennie krótka wiadomość, a gdy przyjdzie myśl o zapaleniu, przycisk „Chcę zapalić” przypomni Ci, czym ona jest.</p></div>
+      <div class="card phase"><small>Dni 29 do 90</small><h3>Bez powrotów</h3><p>Raz w tygodniu przygotowanie na trudne sytuacje: imprezy, alkohol, stres, wakacje. Wiesz, że nie ma „tylko jednego”.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. OPINIE (tylko prawdziwe, z config.js) -->
+<section id="opinie" class="hidden">
+  <div class="wrap">
+    <span class="eyebrow">Opinie</span>
+    <h2>Co mówią <em>moi klienci</em></h2>
+    <div class="quotes" id="quotes"></div>
+  </div>
+</section>
+
+<!-- 7. APLIKACJA -->
+<section class="night">
+  <div class="wrap">
+    <span class="eyebrow">Aplikacja</span>
+    <h2>Wszystko masz <em>w telefonie</em></h2>
+    <p class="lead">Bez App Store. Otwierasz link, dodajesz aplikację do ekranu i logujesz się kodem z maila. Kilka minut dziennie.</p>
+    <div class="app-grid">
+      <div class="phone-wrap">
+        <div class="phone" id="phone" role="region" aria-roledescription="karuzela" aria-label="Ekrany aplikacji">
+          <div class="slides" id="slides">
+            <div class="screen" aria-label="Ekran Dziś">
+              <div class="s-day">Etap 1 · Dzień 2 z 7 · palisz normalnie</div>
+              <div class="s-title">Mały potwór</div>
+              <div class="s-card"><small>Lekcja dnia · 2,5 min</small>Jak nikotyna sama wywołuje głód, który potem gasi</div>
+              <div class="s-card"><small>Ćwiczenie dnia</small>Przy jednym papierosie zauważ: przyjemność czy tylko ulga?</div>
+              <div class="s-btn g">Zacznij lekcję</div>
+              <div class="s-nav"><span class="on">Dziś</span><span>Lekcje</span><span>Licznik</span><span>Spotkania</span></div>
+            </div>
+            <div class="screen" aria-label="Ekran Lekcje">
+              <div class="s-title">Twój plan</div>
+              <div class="s-card"><small>Etap 1 · dni 1–7</small>7 lekcji: pułapka, mały i duży potwór, złudzenia, z czego rezygnujesz, pułapki, gotowość</div>
+              <div class="s-card" style="background:var(--accent-soft);border-color:var(--accent-soft)"><small>Dzień zero</small>Ostatni papieros, buch albo saszetka. Potem jesteś wolny.</div>
+              <div class="s-card"><small>Dni 8–90</small>Krótkie wiadomości: codziennie, potem raz w tygodniu</div>
+              <div class="s-nav"><span>Dziś</span><span class="on">Lekcje</span><span>Licznik</span><span>Spotkania</span></div>
+            </div>
+            <div class="screen" aria-label="Ekran Chcę zapalić">
+              <div class="s-title">Chcę zapalić</div>
+              <div class="s-card" style="text-align:center">To tylko echo starego nawyku. Nic nie tracisz. Nikotyna niczego Ci dziś nie da.</div>
+              <div class="s-card" style="background:var(--accent-soft);border-color:var(--accent-soft);text-align:center"><small>Powiedz w myślach</small>„Hurra, jestem wolny.”</div>
+              <div class="s-btn g">Hurra, jestem wolny</div>
+              <div class="s-nav"><span class="on">Dziś</span><span>Lekcje</span><span>Licznik</span><span>Spotkania</span></div>
+            </div>
+            <div class="screen" aria-label="Ekran Licznik">
+              <div class="s-day">Od dnia zero</div>
+              <div class="s-big">5 dni <span style="font:600 14px var(--text);color:var(--muted)">wolności</span></div>
+              <div class="s-stats"><div class="s-card"><small>Niezapalone</small><b>75</b></div><div class="s-card"><small>Zostało w portfelu</small><b>75 zł</b></div></div>
+              <div class="s-card"><small>Najbliższe spotkanie</small>Wtorek, 20:00 · Google Meet z Tomaszem</div>
+              <div class="s-nav"><span>Dziś</span><span>Lekcje</span><span class="on">Licznik</span><span>Spotkania</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="phone-dots" id="phoneDots" role="tablist" aria-label="Wybierz ekran">
+          <button type="button" role="tab" aria-selected="true" aria-label="Dziś"></button><button type="button" role="tab" aria-label="Lekcje"></button><button type="button" role="tab" aria-label="Chcę zapalić"></button><button type="button" role="tab" aria-label="Licznik"></button>
+        </div>
+        <p class="phone-cap" id="phoneCap">Dziś</p>
+      </div>
+      <div class="feats">
+        <div class="feat" data-slide="0"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M5 19l1.5-1.5M17.5 6.5L19 5"/></svg></div><div><h3>Dziś</h3><p>Lekcja audio na 2 do 3 minut i jedno ćwiczenie.</p></div></div>
+        <div class="feat" data-slide="1"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z"/></svg></div><div><h3>Lekcje</h3><p>Cały plan w jednym miejscu. Do każdej lekcji możesz wrócić, gdy pojawi się wątpliwość.</p></div></div>
+        <div class="feat" data-slide="2"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg></div><div><h3>Chcę zapalić</h3><p>Jeden przycisk na chwilę, gdy wraca stara myśl. Bez minutnika i bez walki.</p></div></div>
+        <div class="feat" data-slide="3"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></div><div><h3>Licznik</h3><p>Dni wolności, niezapalone papierosy i pieniądze, które zostają w kieszeni.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. OFERTA -->
+<section>
+  <div class="wrap">
+    <div class="offer">
+      <div>
+        <span class="eyebrow">Co dostajesz</span>
+        <h2>Pełny program <em>za <span data-price>87 zł</span></em></h2>
+        <ul class="check">
+          <li><b>Aplikacja <span data-brand>Wolne Płuco</span>:</b> 7 lekcji audio, nagranie na dzień zero, ćwiczenia dnia, wiadomości na 90 dni, przycisk „Chcę zapalić” i licznik wolności</li>
+          <li><b>Cotygodniowe spotkania na żywo</b> (Google Meet): autohipnoza, wsparcie i omówienie postępów. Termin i link masz w aplikacji</li>
+          <li><b>Plan na dzień zero,</b> potknięcia i trudne sytuacje, w których najczęściej się wraca</li>
+        </ul>
+      </div>
+      <div class="price">
+        <div class="kicker">Program 90 dni</div>
+        <div class="tag" data-price>87 zł</div>
+        <p>Płacisz raz. Bez abonamentu i ukrytych opłat.</p>
+        <a class="btn lime" href="#zapis">Zapisuję się</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. ZAPIS -->
+<section class="alt" id="zapis">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Zapis</span>
+      <h2>Odzyskaj <em>swój oddech</em></h2>
+      <p class="lead">Jeśli próbowałeś już kilka razy, dobrze trafiłeś. Każda próba czegoś Cię nauczyła. Teraz robimy to z planem.</p>
+      <div class="help">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.4 1.8.7 2.7a2 2 0 01-.5 2.1L8 9.8a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.8.6 2.7.7a2 2 0 011.7 2z"/></svg>
+        <div>Bezpłatna pomoc specjalistów: <b>Telefoniczna Poradnia Pomocy Palącym, 801 108 108</b> (Narodowy Instytut Onkologii, pon. do pt. 11 do 19, sob. 9 do 15).</div>
+      </div>
+    </div>
+    <div class="form-box">
+      <form id="form" novalidate>
+        <div class="two-col">
+          <div><label for="imie">Imię</label><input type="text" id="imie" name="imie" autocomplete="given-name" maxlength="80" required></div>
+          <div><label for="email">E-mail</label><input type="email" id="email" name="email" autocomplete="email" maxlength="200" required></div>
+        </div>
+        <label for="telefon">Telefon <span class="opt">(zadzwonię, żeby ustalić szczegóły)</span></label>
+        <input type="tel" id="telefon" name="telefon" autocomplete="tel" inputmode="tel" maxlength="30" placeholder="np. 500 100 200" required>
+        <label for="profil">Nazwa profilu na Instagramie lub TikToku <span class="opt">(opcjonalnie)</span></label>
+        <input type="text" id="profil" name="profil" placeholder="@twojprofil" maxlength="200">
+        <div class="two-col">
+          <div><label for="ile">Ile palisz dziennie?</label>
+            <select id="ile" name="ile" required><option value="">Wybierz</option><option>Do 5</option><option>6 do 10</option><option>11 do 20</option><option>Ponad 20</option><option>E-papieros lub podgrzewacz</option><option>Snus lub saszetki nikotynowe</option></select></div>
+          <div><label for="jak_dlugo">Od kiedy palisz?</label>
+            <select id="jak_dlugo" name="jak_dlugo" required><option value="">Wybierz</option><option>Mniej niż 2 lata</option><option>2 do 10 lat</option><option>Ponad 10 lat</option><option>Ponad 20 lat</option></select></div>
+        </div>
+        <label for="wiadomosc">Co jest dla Ciebie najtrudniejsze? <span class="opt">(opcjonalnie)</span></label>
+        <textarea id="wiadomosc" name="wiadomosc" maxlength="600" placeholder="Np. poranna kawa i stres w pracy"></textarea>
+        <div class="hp" aria-hidden="true"><label>Firma<input type="text" name="firma" tabindex="-1" autocomplete="off"></label></div>
+        <label class="tick"><input type="checkbox" id="wiek18" required> <span>Mam ukończone 18 lat.</span></label>
+        <label class="tick"><input type="checkbox" id="zgoda" required> <span>Zgadzam się na przetwarzanie podanych danych, w tym informacji o paleniu, w celu zapisu do programu <span data-brand>Wolne Płuco</span>. Administratorem jest Tomasz Świadomość. Mogę wycofać zgodę w każdej chwili. Szczegóły w <a id="privacy" href="#" target="_blank" rel="noopener">polityce prywatności</a>.</span></label>
+        <button class="btn" type="submit" id="send" style="width:100%;margin-top:6px">Zapisuję się</button>
+        <div class="msg" id="msg" role="alert"></div>
+      </form>
+      <div class="done hidden" id="done">
+        <div class="big">Gotowe</div>
+        <h3 id="doneTitle">Dzięki! Jesteś na liście.</h3>
+        <p>Odezwę się mailem w ciągu kilku dni. Zajrzyj też do folderu Oferty lub Spam.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. HIPNOZA -->
+<section id="hipnoza">
+  <div class="wrap">
+    <div class="hyp">
+      <div>
+        <span class="eyebrow">Hipnoza 1:1</span>
+        <h2>Praca z tym, co <em>stoi za papierosem</em></h2>
+        <p class="lead">Papieros często jest odpowiedzią na napięcie, nagrodę albo stary rytuał. W hipnozie pracuję z Tobą właśnie z tym. Przez cały czas jesteś świadomy i masz kontrolę.</p>
+        <div class="facts">
+          <div class="fact"><b>ok. 1,5 h</b><span>jedna sesja z rozmową</span></div>
+          <div class="fact"><b>1 do 4</b><span>sesje, zależnie od potrzeb</span></div>
+        </div>
+      </div>
+      <div>
+        <ol class="steps">
+          <li><span class="n">1</span><div><h3>Rozmawiamy</h3><p>Pytam, kiedy i po co sięgasz po papierosa, od kiedy palisz i co już próbowałeś.</p></div></li>
+          <li><span class="n">2</span><div><h3>Wprowadzam Cię w relaks</h3><p>Spokojny oddech i skupienie. Głęboki relaks przy pełnej świadomości.</p></div></li>
+          <li><span class="n">3</span><div><h3>Pracujemy z podświadomością</h3><p>Rozbrajamy przekonanie, że nikotyna pomaga na stres albo jest nagrodą. Tak, żeby nie było za czym tęsknić.</p></div></li>
+        </ol>
+        <p class="plus"><b>Hipnoza nie zastępuje leczenia uzależnienia od nikotyny.</b> Działa najlepiej razem z programem, a jeśli zdecydujesz się na leki, także z nimi. Efekty są indywidualne.</p>
+        <p style="margin-top:18px"><a class="btn line" id="hypDm" href="#" target="_blank" rel="noopener">Zapytaj o sesję w DM</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 11. KIM JESTEM -->
+<section class="alt">
+  <div class="wrap">
+    <div class="about">
+      <div class="avatar" id="avatar">TŚ</div>
+      <div>
+        <span class="eyebrow">Kim jestem</span>
+        <h2>Tomasz <em>Świadomość</em></h2>
+        <p>Jestem trenerem mentalnym, pracuję też hipnozą. Pomagam ludziom wychodzić z nawyków, które robią bez myślenia.</p>
+        <p>Widzę jedno: nałóg nie znika od zakazów ani od zaciskania zębów. Znika, kiedy naprawdę rozumiesz, że nic Ci nie daje. Wtedy nie ma czego zastępować.</p>
+        <p><span data-brand>Wolne Płuco</span> to ta praca zamknięta w aplikacji, którą masz zawsze przy sobie.</p>
+        <p><a id="ig" href="#" target="_blank" rel="noopener">Zobacz mój profil na Instagramie →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 12. FAQ -->
+<section>
+  <div class="wrap" style="max-width:840px">
+    <h2 class="center">Najczęstsze <em>pytania</em></h2>
+    <div style="margin-top:30px">
+      <details><summary>Czy muszę rzucić od razu?</summary><p>Nie. Przez pierwszy tydzień palisz normalnie i przechodzisz lekcje. Ostatni papieros przychodzi wtedy, gdy jesteś gotowy, zwykle po 7 dniach.</p></details>
+      <details><summary>Czy mogę używać plastrów albo leków?</summary><p>O lekach i plastrach decydujesz z lekarzem albo farmaceutą. Program przechodzisz tak samo w obu przypadkach, bo lekcje zmieniają to, jak myślisz o nikotynie.</p></details>
+      <details><summary>Co, jeśli zapalę jednego?</summary><p>Nie ma „tylko jednego”, bo jeden papieros to powrót do pułapki. Jeśli tak się stanie, aplikacja prowadzi Cię do krótkiej lekcji o tym, co się wydarzyło, i proponuje nowy dzień zero.</p></details>
+      <details><summary>Czy to działa przy e-papierosach i snusie?</summary><p>Tak. Nikotyna i mechanizm nawyku są te same, więc lekcje działają tak samo. W dniu zero oddajesz e-papierosa i liquidy albo puszkę saszetek.</p></details>
+      <details><summary>Ile czasu dziennie mi to zajmie?</summary><p>Około 5 minut. Nagranie trwa 2 do 3 minut, do tego jedno ćwiczenie. Po dniu zero krótka wiadomość na minutę.</p></details>
+      <details><summary>Czy to zastępuje leczenie?</summary><p>Nie. To narzędzie wspierające. Jeśli masz choroby serca lub płuc, jesteś w ciąży albo bierzesz leki, skonsultuj rzucanie z lekarzem. Bezpłatna pomoc: Telefoniczna Poradnia Pomocy Palącym, 801 108 108.</p></details>
+      <details><summary>Czy muszę coś instalować?</summary><p>Nie pobierasz niczego ze sklepu. Aplikacja działa w przeglądarce, a jej ikonę dodajesz do ekranu telefonu. Logujesz się kodem z maila, bez hasła.</p></details>
+      <details><summary>Ile to kosztuje?</summary><p><span data-price>87 zł</span> jednorazowo.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- 13. PRZYCISK NA KOŃCU -->
+<section class="night final-cta">
+  <div class="wrap center">
+    <h2>Zainwestuj w siebie dziś, <em>żeby na starość oddychać swobodnie</em></h2>
+    <p class="lead"><span data-price>87 zł</span> raz, bez abonamentu. Tyle kosztuje kilka paczek, a płuca masz jedne.</p>
+    <a class="btn lime big" href="#zapis">Dołączam · <span data-price>87 zł</span></a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><b data-brand>Wolne Płuco</b> · program stworzony przez Tomasza Świadomość</p>
+    <p>Narzędzie wspierające. Nie zastępuje leczenia ani porady lekarskiej.</p>
+    <p><a id="privacy2" href="#" target="_blank" rel="noopener">Polityka prywatności</a> · <a href="https://app.wolnepluco.tomaszswiadomosc.pl/regulamin.html" target="_blank" rel="noopener">Regulamin</a></p>
+    <p>Sprzedawca: Golden Teacher Tomasz Grzybowski · ul. Hallera 6, 85-795 Bydgoszcz · NIP 5543047787</p>
+  </div>
+</footer>
+
+
+<script src="config.js"></script>
+<script>
+(function(){
+  var C = window.LANDING || {};
+  function esc(s){ return String(s == null ? "" : s).replace(/[&<>"']/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
+  function all(sel){ return Array.prototype.slice.call(document.querySelectorAll(sel)); }
+
+  // Nazwa i cena z config.js
+  if (C.MARKA) { all("[data-brand]").forEach(function(e){ e.textContent = C.MARKA; }); document.title = C.MARKA + " | Rzuć palenie"; }
+  if (C.CENA) all("[data-price]").forEach(function(e){ e.textContent = C.CENA; });
+
+  // Linki
+  ["privacy","privacy2"].forEach(function(id){ var a = document.getElementById(id); if (C.PRIVACY_URL) a.href = C.PRIVACY_URL; });
+  var ig = document.getElementById("ig"), dm = document.getElementById("hypDm");
+  if (C.INSTAGRAM_URL) { ig.href = C.INSTAGRAM_URL; dm.href = C.INSTAGRAM_URL; } else { ig.parentNode.classList.add("hidden"); dm.parentNode.classList.add("hidden"); }
+  if (C.PHOTO_URL) document.getElementById("avatar").innerHTML = '<img src="' + esc(C.PHOTO_URL) + '" alt="Tomasz Świadomość">';
+
+  // Opinie: tylko prawdziwe, z config.js
+  var op = (C.OPINIE || []).filter(function(o){ return o && o.tekst; });
+  if (op.length) {
+    document.getElementById("quotes").innerHTML = op.map(function(o){
+      return '<figure class="quote"><blockquote>' + esc(o.tekst) + '</blockquote><figcaption><b>' + esc(o.imie || "") + '</b>' + (o.opis ? " · " + esc(o.opis) : "") + '</figcaption></figure>';
+    }).join("");
+    document.getElementById("opinie").classList.remove("hidden");
+  }
+
+
+  // Pasek dowodu wypełnia się, gdy sekcja wjedzie na ekran
+  var proof = document.getElementById("proof");
+  if (proof && "IntersectionObserver" in window) {
+    proof.classList.add("pre");
+    new IntersectionObserver(function(es, o){ es.forEach(function(e){ if (e.isIntersecting) { setTimeout(function(){ proof.classList.remove("pre"); }, 150); o.disconnect(); } }); }, {threshold:.4}).observe(proof);
+  }
+
+  // Karuzela ekranów aplikacji
+  (function(){
+    var slides = document.getElementById("slides"); if (!slides) return;
+    var dots = all("#phoneDots button"), cap = document.getElementById("phoneCap");
+    var names = ["Dziś","Lekcje","Chcę zapalić","Licznik"], feats = all(".feat[data-slide]");
+    var i = 0, timer = null, reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    function go(n){ i = (n + 4) % 4; slides.style.transform = "translateX(" + (-100 * i) + "%)";
+      dots.forEach(function(d, k){ d.setAttribute("aria-selected", k === i ? "true" : "false"); });
+      cap.textContent = names[i]; feats.forEach(function(f){ f.classList.toggle("active", +f.dataset.slide === i); }); }
+    function play(){ if (reduce) return; stop(); timer = setInterval(function(){ go(i + 1); }, 3500); }
+    function stop(){ clearInterval(timer); timer = null; }
+    dots.forEach(function(d, k){ d.addEventListener("click", function(){ go(k); play(); }); });
+    feats.forEach(function(f){ f.addEventListener("click", function(){ go(+f.dataset.slide); play(); }); });
+    var ph = document.getElementById("phone"), x0 = null;
+    ph.addEventListener("mouseenter", stop); ph.addEventListener("mouseleave", play);
+    ph.addEventListener("touchstart", function(e){ x0 = e.touches[0].clientX; stop(); }, {passive:true});
+    ph.addEventListener("touchend", function(e){ if (x0 === null) return; var dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) go(i + (dx < 0 ? 1 : -1)); x0 = null; play(); });
+    if ("IntersectionObserver" in window) { new IntersectionObserver(function(es){ es.forEach(function(e){ e.isIntersecting ? play() : stop(); }); }).observe(ph); } else play();
+    go(0);
+  })();
+
+  // Darmowa lekcja 1 (audio)
+  (function(){
+    var a = document.getElementById("sAudio"); if (!a) return;
+    var b = document.getElementById("sPlay"), bar = document.getElementById("sBar"), fill = document.getElementById("sFill");
+    var playI = '<svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="7 4 20 12 7 20 7 4"/></svg>', pauseI = '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>';
+    function t(s){ s = Math.floor(s || 0); return Math.floor(s / 60) + ":" + ("0" + s % 60).slice(-2); }
+    b.addEventListener("click", function(){ if (a.paused) a.play().catch(function(){}); else a.pause(); });
+    a.addEventListener("play", function(){ b.innerHTML = pauseI; b.setAttribute("aria-label", "Pauza"); });
+    a.addEventListener("pause", function(){ b.innerHTML = playI; b.setAttribute("aria-label", "Odtwórz lekcję 1"); });
+    a.addEventListener("timeupdate", function(){ if (a.duration) { fill.style.width = (a.currentTime / a.duration * 100) + "%"; document.getElementById("sCur").textContent = t(a.currentTime); document.getElementById("sDur").textContent = t(a.duration); } });
+    bar.addEventListener("click", function(e){ var r = bar.getBoundingClientRect(); if (a.duration) a.currentTime = (e.clientX - r.left) / r.width * a.duration; });
+  })();
+  // Film: ładuje YouTube dopiero po kliknięciu
+  var v = document.getElementById("video");
+  if (v && C.YOUTUBE_ID) {
+    var id = encodeURIComponent(C.YOUTUBE_ID);
+    v.innerHTML = '<button aria-label="Odtwórz film" style="background-image:url(https://i.ytimg.com/vi/' + id + '/hqdefault.jpg)"><span class="play"></span></button>';
+    v.querySelector("button").addEventListener("click", function(){
+      v.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0&playsinline=1" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen title="Film"></iframe>';
+    });
+  }
+
+
+  // Skąd przyszła osoba (?z=instagram)
+  var q = new URLSearchParams(location.search);
+  var zrodlo = (q.get("z") || q.get("utm_source") || document.referrer.split("/")[2] || "bezposrednio").slice(0, 100);
+
+  // Statystyki strony bez ciasteczek: wejście, odsłuchanie lekcji 1, klik „Dołączam”, zapis
+  var sent = {};
+  function ev(name){
+    if (!C.SUPABASE_URL || sent[name]) return; sent[name] = 1;
+    try { if (name === "wejscie") { if (sessionStorage.getItem("wp_wejscie")) return; sessionStorage.setItem("wp_wejscie", "1"); } } catch (e) {}
+    var hd = { "apikey": C.SUPABASE_KEY, "Content-Type": "application/json", "Prefer": "return=minimal" };
+    if (C.SUPABASE_KEY.indexOf("eyJ") === 0) hd["Authorization"] = "Bearer " + C.SUPABASE_KEY;
+    fetch(C.SUPABASE_URL.replace(/\/$/, "") + "/rest/v1/landing_events", { method: "POST", headers: hd, keepalive: true,
+      body: JSON.stringify({ event: name, zrodlo: zrodlo, urzadzenie: /Mobi|Android|iPhone/i.test(navigator.userAgent) ? "telefon" : "komputer" }) }).catch(function(){});
+  }
+  ev("wejscie");
+  document.addEventListener("click", function(e){ var a = e.target.closest && e.target.closest('a[href="#zapis"]'); if (a) ev("dolaczam"); });
+  var sa = document.getElementById("sAudio"); if (sa) sa.addEventListener("play", function(){ ev("lekcja1"); });
+
+  // Formularz
+  var form = document.getElementById("form"), msg = document.getElementById("msg"), btn = document.getElementById("send");
+  function err(t){ msg.className = "msg err"; msg.textContent = t; }
+  function success(name, dup){
+    form.classList.add("hidden");
+    document.getElementById("done").classList.remove("hidden");
+    document.getElementById("doneTitle").textContent = dup ? "Ten e-mail jest już na liście. Odezwę się wkrótce." : "Dzięki" + (name ? ", " + name : "") + "! Jesteś na liście.";
+  }
+  form.addEventListener("submit", function(e){
+    e.preventDefault(); msg.className = "msg";
+    var f = form.elements;
+    if (f.firma.value) return success("", false);
+    var data = {
+      imie: f.imie.value.trim(), email: f.email.value.trim().toLowerCase(), telefon: f.telefon.value.trim(), profil: f.profil.value.trim() || null,
+      ile_dziennie: f.ile.value, jak_dlugo: f.jak_dlugo.value, wiadomosc: f.wiadomosc.value.trim() || null,
+      wiek18: document.getElementById("wiek18").checked, zgoda: document.getElementById("zgoda").checked, zrodlo: zrodlo
+    };
+    if (!data.imie) return err("Wpisz swoje imię.");
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(data.email)) return err("Sprawdź adres e-mail.");
+    if (data.telefon.replace(/\D/g, "").length < 9) return err("Wpisz numer telefonu, żebym mógł do Ciebie zadzwonić.");
+    if (!data.ile_dziennie) return err("Zaznacz, ile palisz dziennie.");
+    if (!data.jak_dlugo) return err("Zaznacz, od kiedy palisz.");
+    if (!data.wiek18) return err("Program jest dla osób pełnoletnich.");
+    if (!data.zgoda) return err("Zaznacz zgodę na przetwarzanie danych.");
+    if (!C.SUPABASE_URL) { console.warn("Tryb podglądu: formularz jeszcze nie zapisuje danych.", data); return success(data.imie, false); }
+    btn.disabled = true; btn.textContent = "Wysyłam...";
+    var headers = { "apikey": C.SUPABASE_KEY, "Content-Type": "application/json", "Prefer": "return=minimal" };
+    if (C.SUPABASE_KEY.indexOf("eyJ") === 0) headers["Authorization"] = "Bearer " + C.SUPABASE_KEY;
+    fetch(C.SUPABASE_URL.replace(/\/$/, "") + "/rest/v1/" + (C.TABELA || "zgloszenia_palenie"), { method:"POST", headers:headers, body:JSON.stringify(data) })
+      .then(function(r){ if (r.ok) { ev("zapis"); return success(data.imie, false); } if (r.status === 409) return success(data.imie, true); throw new Error(r.status); })
+      .catch(function(){ btn.disabled = false; btn.textContent = "Zapisuję się"; err("Coś poszło nie tak. Spróbuj ponownie albo napisz do mnie w DM."); });
+  });
+})();
+</script>
+<script>
+/* Oś czasu: daty liczone od chwili otwarcia strony */
+(function(){
+  var box=document.getElementById('otl'); if(!box) return;
+  var ol=document.getElementById('otlList'), note=document.getElementById('otlNote');
+  var MON=['stycznia','lutego','marca','kwietnia','maja','czerwca','lipca','sierpnia','września','października','listopada','grudnia'];
+  var MONN=['styczeń','luty','marzec','kwiecień','maj','czerwiec','lipiec','sierpień','wrzesień','październik','listopad','grudzień'];
+  var MS=['sty','lut','mar','kwi','maj','cze','lip','sie','wrz','paź','lis','gru'];
+  function add(d,o){var x=new Date(d.getTime());if(o.m)x.setMinutes(x.getMinutes()+o.m);if(o.h)x.setHours(x.getHours()+o.h);if(o.d)x.setDate(x.getDate()+o.d);if(o.w)x.setDate(x.getDate()+7*o.w);if(o.mo)x.setMonth(x.getMonth()+o.mo);if(o.y)x.setFullYear(x.getFullYear()+o.y);return x;}
+  function hm(x){return x.getHours()+':'+('0'+x.getMinutes()).slice(-2);}
+  function same(a,b){return a.toDateString()===b.toDateString();}
+  function time(n,o){var x=add(n,o),t=add(n,{d:1});return (same(x,n)?'dziś o ':same(x,t)?'jutro o ':x.getDate()+' '+MON[x.getMonth()]+' o ')+hm(x);}
+  function day(n,o){var x=add(n,o);return x.getDate()+' '+MON[x.getMonth()]+(x.getFullYear()!==n.getFullYear()?' '+x.getFullYear():'');}
+  function month(n,o){var x=add(n,o);return MONN[x.getMonth()]+' '+x.getFullYear();}
+  function year(n,o){return String(add(n,o).getFullYear());}
+  function rd(n,a,b){var x=add(n,a),y=add(n,b);return x.getDate()+' '+MS[x.getMonth()]+' – '+y.getDate()+' '+MS[y.getMonth()]+' '+y.getFullYear();}
+  function rm(n,a,b){var x=add(n,a),y=add(n,b);return MS[x.getMonth()]+(x.getFullYear()!==y.getFullYear()?' '+x.getFullYear():'')+' – '+MS[y.getMonth()]+' '+y.getFullYear();}
+  function nic(what,without){return [
+    {t:'Kilka godzin',x:'Pojawia się pierwsza chęć na '+what+'. To nikotyna opuszcza organizm.',dt:function(n){return 'ok. '+time(n,{h:4});}},
+    {t:'3 dni',x:'Objawy odstawienia są najsilniejsze. Potem już tylko łatwiej.',dt:function(n){return day(n,{d:3});}},
+    {t:'1 tydzień',x:'Najtrudniejszy czas jest już za Tobą.',dt:function(n){return day(n,{d:7});}},
+    {t:'Kilka tygodni',x:'Objawy odstawienia zwykle mijają.',dt:function(n){return 'ok. '+day(n,{w:4});}},
+    {t:'1 rok',x:'Rok bez '+without+'. Pieniądze, które na to wydawałeś, zostają w portfelu.',dt:function(n){return month(n,{y:1});}}
+  ];}
+  var D={
+    pap:{start:'Ostatni papieros',items:[
+      {t:'20 minut',x:'Spada tętno i ciśnienie krwi.',dt:function(n){return time(n,{m:20});}},
+      {t:'12 godzin',x:'Poziom tlenku węgla we krwi wraca do normy.',dt:function(n){return time(n,{h:12});}},
+      {t:'2 do 12 tygodni',x:'Poprawia się krążenie i wydolność płuc.',dt:function(n){return rd(n,{w:2},{w:12});}},
+      {t:'1 do 9 miesięcy',x:'Mniej kaszlu i zadyszki.',dt:function(n){return rm(n,{mo:1},{mo:9});}},
+      {t:'1 rok',x:'Ryzyko choroby wieńcowej spada mniej więcej o połowę.',dt:function(n){return month(n,{y:1});}},
+      {t:'5 lat',x:'Ryzyko udaru zaczyna spadać do poziomu osoby niepalącej.',dt:function(n){return year(n,{y:5});}},
+      {t:'10 lat',x:'Ryzyko raka płuca jest mniej więcej o połowę niższe niż u palacza.',dt:function(n){return year(n,{y:10});}},
+      {t:'15 lat',x:'Ryzyko choroby wieńcowej jak u osoby, która nigdy nie paliła.',dt:function(n){return year(n,{y:15});}}]},
+    vape:{start:'Ostatni buch',items:nic('bucha','e-papierosa')},
+    snus:{start:'Ostatnia saszetka',items:nic('saszetkę','saszetek')}
+  };
+  var still=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches, seen=false;
+  var now=new Date();
+  document.querySelectorAll('[data-today]').forEach(function(e){e.textContent=now.getDate()+' '+MON[now.getMonth()]+' '+now.getFullYear();});
+  function render(k){
+    var d=D[k],n=new Date(),h='<li class="st" style="--i:0"><span class="dot"></span><div class="lbl"><span class="when">Dziś, '+hm(n)+'</span><b>Start</b><p>'+d.start+'</p></div></li>';
+    d.items.forEach(function(it,i){h+='<li style="--i:'+(i+1)+'"><span class="dot"></span><div class="lbl"><span class="when">'+it.dt(n)+'</span><b>'+it.t+'</b><p>'+it.x+'</p></div></li>';});
+    ol.innerHTML=h; ol.style.setProperty('--n',d.items.length+1);
+    note.hidden=(k==='pap');
+    if(!still&&seen){box.classList.remove('go');void box.offsetWidth;box.classList.add('go');}
+  }
+  if(!still) box.classList.add('anim');
+  render('pap');
+  document.querySelectorAll('.tl-tabs button').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      document.querySelectorAll('.tl-tabs button').forEach(function(b){b.setAttribute('aria-selected',b===btn?'true':'false');});
+      render(btn.getAttribute('data-k'));
+    });
+  });
+  if(still||!('IntersectionObserver' in window)){box.classList.add('go');seen=true;return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){seen=true;box.classList.add('go');io.disconnect();}});},{threshold:.25});
+  io.observe(box);
+})();
+</script>
+<script>
+/* Quiz: Sprawdź, jak bardzo jesteś uzależniony */
+(function(){
+  var body=document.getElementById('qBody'), bar=document.getElementById('qBar'); if(!body) return;
+  var Q=[
+    'Palisz ponad pół paczki dziennie albo e-papieros czy saszetka są z Tobą od rana do wieczora?',
+    'Gdy się zdenerwujesz, pierwsze, po co sięgasz, to papieros, buch albo saszetka?',
+    'Masz poranny kaszel, chrypkę albo łapiesz zadyszkę szybciej niż kiedyś?',
+    'Gdy chorujesz, robisz przerwę, a po wyzdrowieniu i tak wracasz do nałogu?',
+    'Próbowałeś już rzucić i po jakimś czasie wróciłeś?',
+    'Ukrywasz to przed bliskimi albo wstydzisz się zapachu na ubraniu i dłoniach?'
+  ];
+  var R=[
+    {max:1,lvl:'Niski poziom',t:'Pułapka dopiero się zamyka',x:'Nikotyna jeszcze nie ustawia całego Twojego dnia. To najlepszy moment, żeby wyjść, zanim zacznie.'},
+    {max:3,lvl:'Średni poziom',t:'Nikotyna już ustawia Twój dzień',x:'Kawa, stres, przerwa w pracy: coraz więcej chwil kręci się wokół papierosa, bucha albo saszetki. Sama silna wola zwykle tu nie wystarcza. Potrzebny jest plan.'},
+    {max:6,lvl:'Wysoki poziom',t:'Nikotyna trzyma Cię mocno',x:'To nie wyrok. Silne uzależnienie da się rozbroić krok po kroku, z planem i wsparciem. Właśnie dla takich osób jest ten program.'}
+  ];
+  var i=0,yes=0;
+  function esc(s){return s.replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
+  function q(){
+    bar.style.width=(i/Q.length*100)+'%';
+    body.innerHTML='<div class="q-anim"><p class="q-step">Pytanie '+(i+1)+' z '+Q.length+'</p><p class="q-text">'+esc(Q[i])+'</p><div class="q-btns"><button type="button" class="btn" data-ans="1">Tak</button><button type="button" class="btn line" data-ans="0">Nie</button></div></div>';
+  }
+  function res(){
+    bar.style.width='100%';
+    var r=R.filter(function(r){return yes<=r.max;})[0], pos=Math.round(8+yes/Q.length*84);
+    body.innerHTML='<div class="q-anim q-res"><div class="q-meter"><i id="qPin" style="left:8%"></i></div><div class="q-labels"><span>Niski</span><span>Średni</span><span>Wysoki</span></div>'+
+      '<span class="q-level">'+r.lvl+' · '+yes+' na '+Q.length+'</span><h4>'+r.t+'</h4><p>'+r.x+'</p>'+
+      '<div class="q-yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg>Tak, nadajesz się do programu</div>'+
+      '<div class="q-btns"><a class="btn" href="#zapis">Dołączam · <span data-price>'+((window.LANDING&&LANDING.CENA)||'87 zł')+'</span></a><button type="button" class="q-again">Zrób test jeszcze raz</button></div>'+
+      '<p class="q-note">To szybki test, nie diagnoza medyczna.</p></div>';
+    setTimeout(function(){var p=document.getElementById('qPin'); if(p) p.style.left=pos+'%';},120);
+  }
+  body.addEventListener('click',function(e){
+    var b=e.target.closest('button'); if(!b) return;
+    if(b.classList.contains('q-again')){i=0;yes=0;q();return;}
+    if(b.hasAttribute('data-ans')){yes+=+b.getAttribute('data-ans');i++; if(i<Q.length) q(); else res();}
+  });
+  q();
+})();
+</script>
+<script>
+/* Animacje: wejścia przy przewijaniu, kolejność, pasek postępu, licznik, paralaksa */
+(function(){
+  var root=document.documentElement, still=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var prog=document.getElementById('prog');
+  function onScroll(){
+    var d=document.documentElement,max=d.scrollHeight-d.clientHeight,y=window.scrollY||d.scrollTop;
+    if(prog) prog.style.width=(max>0?y/max*100:0)+'%';
+    if(!still) document.querySelectorAll('.band').forEach(function(b){
+      var r=b.getBoundingClientRect(); if(r.bottom<0||r.top>innerHeight) return;
+      var img=b.querySelector('.band-bg'); if(img) img.style.transform='translateY('+((r.top+r.height/2-innerHeight/2)*-0.12)+'px)';
+    });
+  }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  if(still||!('IntersectionObserver' in window)) return;
+  root.classList.add('js');
+  var map=[
+    ['.hero .eyebrow','up'],['.hero h1','clip'],['.hero .slogan','blur'],['.hero .sub','up'],['.hero .cta-row','up'],['.hero .fine','up'],['.hero-photo','right'],
+    ['section .eyebrow','up'],['section h2','clip'],['section .lead','blur'],
+    ['.stat','up'],['.types .type','rise'],['.types-note','up'],['.sample','scale'],
+    ['.grid.three .card','rise'],['.quiz','scale'],['.gal-item','rise'],['.lungs-fig','scale'],['.lungs-txt p','up'],['.band-sig','up'],
+    ['.tl-tabs','up'],['.steps li','left'],['.feats > *','up'],['.quotes > *','up'],
+    ['.offer > *','up'],['.about > *','up'],['details','up'],['.final-cta .btn','scale'],['.app-grid > *','up'],['.hyp > *','up']
+  ];
+  var els=[];
+  map.forEach(function(m){
+    document.querySelectorAll(m[0]).forEach(function(el){
+      if(el.hasAttribute('data-a')||el.closest('[data-a]')||el.closest('.mq')) return;
+      el.setAttribute('data-a',m[1]); els.push(el);
+    });
+  });
+  els.forEach(function(el){
+    var p=el.parentNode,k=p.__k||(p.__k={}),t=el.getAttribute('data-a');
+    k[t]=(k[t]===undefined?0:k[t]+1); if(k[t]>0) el.style.setProperty('--i',Math.min(k[t],6));
+  });
+  function show(el){
+    el.classList.add('in');
+    var i=+(el.style.getPropertyValue('--i')||0);
+    setTimeout(function(){el.classList.add('a-done');},900+i*90+200);
+    el.querySelectorAll('[data-count]').forEach(count);
+  }
+  function count(n){
+    var to=+n.getAttribute('data-count'),t0=null;
+    function f(t){if(!t0)t0=t;var k=Math.min(1,(t-t0)/1400);n.textContent=Math.round(to*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(f);}
+    n.textContent='0'; requestAnimationFrame(f);
+  }
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var l=proxy.get(e.target);if(l)l.forEach(show);if(e.target.hasAttribute('data-a'))show(e.target);io.unobserve(e.target);}});},{threshold:.08,rootMargin:'0px 0px -8% 0px'});
+  /* element ukryty maską (clip) obserwujemy przez rodzica, bo sam ma zerowy obszar widoczny */
+  var proxy=new Map();
+  els.forEach(function(el){
+    if(el.closest('.hero')) return;
+    if(el.getAttribute('data-a')==='clip'){var par=el.parentNode;if(!proxy.has(par)){proxy.set(par,[]);io.observe(par);}proxy.get(par).push(el);}
+    else io.observe(el);
+  });
+  setTimeout(function(){document.querySelectorAll('.hero [data-a]').forEach(show);},80);
+})();
+</script>
+</body>
+</html>
