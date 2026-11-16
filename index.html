@@ -199,6 +199,19 @@
 
   /* OFERTA */
   .offer{display:grid;gap:26px;align-items:center}
+  .pdf-offer{margin-top:30px;display:grid;gap:22px;align-items:center;background:var(--card,#fff);border:1.5px dashed #B9B4F2;border-radius:var(--r,24px);padding:22px}
+  @media(min-width:760px){.pdf-offer{grid-template-columns:160px 1fr;padding:26px 30px}}
+  .pdf-offer img{width:160px;max-width:100%;border-radius:6px;box-shadow:0 12px 28px rgba(23,21,59,.25);justify-self:center;display:block}
+  .pdf-offer h3{font:400 clamp(26px,3vw,32px)/1.1 var(--serif);margin:6px 0 8px}
+  .pdf-offer h3 em{color:var(--accent)}
+  .pdf-offer p{color:var(--muted);margin:0}
+  .pdf-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:14px 0 8px}
+  .pdf-price{font:400 48px/1 var(--serif);color:var(--ink)}
+  .offer-pick{display:grid;gap:8px;margin:0 0 14px}
+  .offer-pick label{display:flex;gap:12px;align-items:center;border:1.5px solid var(--line);border-radius:14px;padding:12px 14px;cursor:pointer;font-weight:700;margin:0;background:#fff}
+  .offer-pick label:has(input:checked){border-color:var(--accent);background:var(--accent-soft,#E7E6FD)}
+  .offer-pick input{width:20px;height:20px;accent-color:var(--accent);flex:none;margin:0}
+  .offer-pick small{display:block;font-weight:500;color:var(--muted);font-size:13.5px;margin-top:2px}
   @media(min-width:860px){.offer{grid-template-columns:1.2fr .8fr}}
   .check{list-style:none;padding:0;margin:22px 0 0}
   .check li{position:relative;padding:0 0 14px 38px;color:var(--muted)}
@@ -690,9 +703,9 @@
             </div>
             <div class="screen" aria-label="Ekran Lekcje">
               <div class="s-title">Twój plan</div>
-              <div class="s-card"><small>Etap 1 · dni 1–7</small>7 lekcji: pułapka, mały i duży potwór, złudzenia, z czego rezygnujesz, pułapki, gotowość</div>
+              <div class="s-card"><small>Etap 1 · dni 1 do 7</small>7 lekcji: pułapka, mały i duży potwór, złudzenia, z czego rezygnujesz, pułapki, gotowość</div>
               <div class="s-card" style="background:var(--accent-soft);border-color:var(--accent-soft)"><small>Dzień zero</small>Ostatni papieros, buch albo saszetka. Potem jesteś wolny.</div>
-              <div class="s-card"><small>Dni 8–90</small>Krótkie wiadomości: codziennie, potem raz w tygodniu</div>
+              <div class="s-card"><small>Dni 8 do 90</small>Krótkie wiadomości: codziennie, potem raz w tygodniu</div>
               <div class="s-nav"><span>Dziś</span><span class="on">Lekcje</span><span>Licznik</span><span>Spotkania</span></div>
             </div>
             <div class="screen" aria-label="Ekran Chcę zapalić">
@@ -746,6 +759,16 @@
         <a class="btn lime" href="#zapis">Zapisuję się</a>
       </div>
     </div>
+    <div class="pdf-offer">
+      <img src="img/przewodnik-okladka.jpg" alt="Okładka przewodnika Dlaczego tak trudno rzucić nikotynę?" width="160" height="226" loading="lazy">
+      <div>
+        <span class="eyebrow">Nie jesteś jeszcze gotowy na program?</span>
+        <h3>Zacznij od przewodnika PDF <em>„Dlaczego tak trudno rzucić nikotynę?”</em></h3>
+        <p>Skąd bierze się głód, pięć złudzeń, które trzymają Cię przy nikotynie, test i obserwacja na pierwsze 3 dni. 6 stron, przeczytasz w 15 minut. Papierosy, e-papierosy i saszetki.</p>
+        <div class="pdf-row"><span class="pdf-price">37 zł</span><a class="btn line" href="#zapis" data-oferta="przewodnik">Chcę przewodnik</a></div>
+        <p class="fine" style="font-size:13.5px">Jeśli później dołączysz do programu, odliczę Ci te 37 zł. Program kosztuje Cię wtedy 50 zł.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -763,6 +786,10 @@
     </div>
     <div class="form-box">
       <form id="form" novalidate>
+        <div class="offer-pick" role="radiogroup" aria-label="Wybierz ofertę">
+          <label><input type="radio" name="oferta" value="program" checked> <span>Program 90 dni, <span data-price>87 zł</span><small>Aplikacja z lekcjami audio, dzień zero, spotkania na żywo</small></span></label>
+          <label><input type="radio" name="oferta" value="przewodnik"> <span>Przewodnik PDF, 37 zł<small>„Dlaczego tak trudno rzucić nikotynę?”, wysyłam mailem</small></span></label>
+        </div>
         <div class="two-col">
           <div><label for="imie">Imię</label><input type="text" id="imie" name="imie" autocomplete="given-name" maxlength="80" required></div>
           <div><label for="email">E-mail</label><input type="email" id="email" name="email" autocomplete="email" maxlength="200" required></div>
@@ -788,7 +815,7 @@
       <div class="done hidden" id="done">
         <div class="big">Gotowe</div>
         <h3 id="doneTitle">Dzięki! Jesteś na liście.</h3>
-        <p>Odezwę się mailem w ciągu kilku dni. Zajrzyj też do folderu Oferty lub Spam.</p>
+        <p id="doneText">Zadzwonię albo napiszę, zwykle w ciągu 24 godzin. Ustalimy płatność BLIK-iem, a dostęp do aplikacji dostaniesz mailem. Zajrzyj też do folderu Oferty lub Spam.</p>
       </div>
     </div>
   </div>
@@ -849,7 +876,7 @@
       <details><summary>Ile czasu dziennie mi to zajmie?</summary><p>Około 5 minut. Nagranie trwa 2 do 3 minut, do tego jedno ćwiczenie. Po dniu zero krótka wiadomość na minutę.</p></details>
       <details><summary>Czy to zastępuje leczenie?</summary><p>Nie. To narzędzie wspierające. Jeśli masz choroby serca lub płuc, jesteś w ciąży albo bierzesz leki, skonsultuj rzucanie z lekarzem. Bezpłatna pomoc: Telefoniczna Poradnia Pomocy Palącym, 801 108 108.</p></details>
       <details><summary>Czy muszę coś instalować?</summary><p>Nie pobierasz niczego ze sklepu. Aplikacja działa w przeglądarce, a jej ikonę dodajesz do ekranu telefonu. Logujesz się kodem z maila, bez hasła.</p></details>
-      <details><summary>Ile to kosztuje?</summary><p><span data-price>87 zł</span> jednorazowo.</p></details>
+      <details><summary>Ile to kosztuje?</summary><p>Program 90 dni kosztuje <span data-price>87 zł</span> jednorazowo, bez abonamentu. Sam przewodnik PDF „Dlaczego tak trudno rzucić nikotynę?” kosztuje 37 zł. Jeśli najpierw kupisz przewodnik, a potem dołączysz do programu, odliczę Ci te 37 zł i za program zapłacisz 50 zł.</p></details>
     </div>
   </div>
 </section>
@@ -969,19 +996,28 @@
   document.addEventListener("click", function(e){ var a = e.target.closest && e.target.closest('a[href="#zapis"]'); if (a) ev("dolaczam"); });
   var sa = document.getElementById("sAudio"); if (sa) sa.addEventListener("play", function(){ ev("lekcja1"); });
 
+  // Wybór oferty: przycisk „Chcę przewodnik” zaznacza przewodnik, pozostałe przyciski program
+  document.addEventListener("click", function(e){
+    var a = e.target.closest && e.target.closest('a[href="#zapis"]'); if (!a) return;
+    var r = document.querySelector('input[name="oferta"][value="' + (a.getAttribute("data-oferta") || "program") + '"]'); if (r) r.checked = true;
+  });
+
   // Formularz
   var form = document.getElementById("form"), msg = document.getElementById("msg"), btn = document.getElementById("send");
   function err(t){ msg.className = "msg err"; msg.textContent = t; }
   function success(name, dup){
     form.classList.add("hidden");
     document.getElementById("done").classList.remove("hidden");
-    document.getElementById("doneTitle").textContent = dup ? "Ten e-mail jest już na liście. Odezwę się wkrótce." : "Dzięki" + (name ? ", " + name : "") + "! Jesteś na liście.";
+    document.getElementById("doneTitle").textContent = dup ? "To zgłoszenie już do mnie dotarło. Odezwę się wkrótce." : "Dzięki" + (name ? ", " + name : "") + "! Twoje zgłoszenie dotarło.";
+    var o = (form.querySelector('input[name="oferta"]:checked') || {}).value;
+    if (!dup && o === "przewodnik") document.getElementById("doneText").textContent = "Zadzwonię albo napiszę, zwykle w ciągu 24 godzin. Po płatności BLIK-iem wyślę Ci przewodnik mailem. Zajrzyj też do folderu Oferty lub Spam.";
   }
   form.addEventListener("submit", function(e){
     e.preventDefault(); msg.className = "msg";
     var f = form.elements;
     if (f.firma.value) return success("", false);
     var data = {
+      oferta: (form.querySelector('input[name="oferta"]:checked') || {}).value || "program",
       imie: f.imie.value.trim(), email: f.email.value.trim().toLowerCase(), telefon: f.telefon.value.trim(), profil: f.profil.value.trim() || null,
       ile_dziennie: f.ile.value, jak_dlugo: f.jak_dlugo.value, wiadomosc: f.wiadomosc.value.trim() || null,
       wiek18: document.getElementById("wiek18").checked, zgoda: document.getElementById("zgoda").checked, zrodlo: zrodlo
