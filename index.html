@@ -687,7 +687,7 @@
     <p class="lead">Nie rzucasz siłą woli. Najpierw rozumiesz, że nic nie tracisz. Potem jest jeden ostatni papieros i od tej chwili jesteś wolny.</p>
     <div class="grid three">
       <div class="card phase"><small>Dni 1 do 7</small><h3>Zrozumienie</h3><p>Jedna lekcja audio na 2 do 3 minut i jedno ćwiczenie dziennie. Palisz, wapujesz czy snusujesz normalnie, niczego nie ograniczasz. Krok po kroku widzisz, że nikotyna nic Ci nie daje.</p></div>
-      <div class="card phase"><small>Dzień zero i dni 8 do 28</small><h3>Wolność od pierwszej chwili</h3><p>Ostatni papieros, buch albo saszetka i licznik wolności rusza. Codziennie krótka wiadomość, a gdy przyjdzie myśl o zapaleniu, przycisk „Chcę zapalić” przypomni Ci, czym ona jest.</p></div>
+      <div class="card phase"><small>Dzień zero i dni 8 do 28</small><h3>Wolność od pierwszej chwili</h3><p>Ostatni papieros, buch albo saszetka i licznik wolności rusza. Codziennie krótka wiadomość. Gdy przyjdzie fala ochoty, wciskasz SOS: krótka medytacja, minuta oddechu i fala mija.</p></div>
       <div class="card phase"><small>Dni 29 do 90</small><h3>Bez powrotów</h3><p>Raz w tygodniu przygotowanie na trudne sytuacje: imprezy, alkohol, stres, wakacje. Wiesz, że nie ma „tylko jednego”.</p></div>
     </div>
   </div>
@@ -727,12 +727,20 @@
               <div class="s-card"><small>Dni 8 do 90</small>Krótkie wiadomości: codziennie, potem raz w tygodniu</div>
               <div class="s-nav"><span>Dziś</span><span class="on">Lekcje</span><span>Licznik</span><span>Spotkania</span></div>
             </div>
-            <div class="screen" aria-label="Ekran Chcę zapalić">
-              <div class="s-title">Chcę zapalić</div>
-              <div class="s-card" style="text-align:center">To tylko echo starego nawyku. Nic nie tracisz. Nikotyna niczego Ci dziś nie da.</div>
-              <div class="s-card" style="background:var(--accent-soft);border-color:var(--accent-soft);text-align:center"><small>Powiedz w myślach</small>„Hurra, jestem wolny.”</div>
-              <div class="s-btn g">Hurra, jestem wolny</div>
+            <div class="screen" aria-label="Ekran SOS">
+              <div class="s-day">SOS · to fala, minie za kilka minut</div>
+              <div class="s-title">Zatrzymaj się na minutę</div>
+              <div class="s-card" style="background:var(--ink);border-color:var(--ink);color:#fff"><small style="color:var(--lime)">▶ Medytacja SOS · 1:45</small>Głos prowadzi Cię przez falę</div>
+              <div class="s-stats"><div class="s-card"><small>Oddech</small><b>1 min</b></div><div class="s-card"><small>Kotwica</small><b>7 min</b></div></div>
+              <div class="s-btn g">Przeszło? Tak</div>
               <div class="s-nav"><span class="on">Dziś</span><span>Lekcje</span><span>Licznik</span><span>Spotkania</span></div>
+            </div>
+            <div class="screen" aria-label="Ekran Medytacje i oddech">
+              <div class="s-title">Ćwiczenia na trudną chwilę</div>
+              <div class="s-card"><small>Medytacja · 7 min</small>Kotwica wolności: autohipnoza, która ustawia Twój gest spokoju</div>
+              <div class="s-card"><small>Medytacja · 1:45</small>SOS: szybkie przejście przez falę ochoty</div>
+              <div class="s-card" style="background:var(--accent-soft);border-color:var(--accent-soft)"><small>Oddech · 1 min</small>Spokój, kwadrat albo podwójny wdech, z kołem i wibracją</div>
+              <div class="s-nav"><span>Dziś</span><span>Lekcje</span><span>Licznik</span><span class="on">Spotkania</span></div>
             </div>
             <div class="screen" aria-label="Ekran Licznik">
               <div class="s-day">Od dnia zero</div>
@@ -744,15 +752,16 @@
           </div>
         </div>
         <div class="phone-dots" id="phoneDots" role="tablist" aria-label="Wybierz ekran">
-          <button type="button" role="tab" aria-selected="true" aria-label="Dziś"></button><button type="button" role="tab" aria-label="Lekcje"></button><button type="button" role="tab" aria-label="Chcę zapalić"></button><button type="button" role="tab" aria-label="Licznik"></button>
+          <button type="button" role="tab" aria-selected="true" aria-label="Dziś"></button><button type="button" role="tab" aria-label="Lekcje"></button><button type="button" role="tab" aria-label="SOS"></button><button type="button" role="tab" aria-label="Medytacje i oddech"></button><button type="button" role="tab" aria-label="Licznik"></button>
         </div>
         <p class="phone-cap" id="phoneCap">Dziś</p>
       </div>
       <div class="feats">
         <div class="feat" data-slide="0"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M5 19l1.5-1.5M17.5 6.5L19 5"/></svg></div><div><h3>Dziś</h3><p>Lekcja audio na 2 do 3 minut i jedno ćwiczenie.</p></div></div>
         <div class="feat" data-slide="1"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z"/></svg></div><div><h3>Lekcje</h3><p>Cały plan w jednym miejscu. Do każdej lekcji możesz wrócić, gdy pojawi się wątpliwość.</p></div></div>
-        <div class="feat" data-slide="2"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg></div><div><h3>Chcę zapalić</h3><p>Jeden przycisk na chwilę, gdy wraca stara myśl. Bez minutnika i bez walki.</p></div></div>
-        <div class="feat" data-slide="3"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></div><div><h3>Licznik</h3><p>Dni wolności, niezapalone papierosy i pieniądze, które zostają w kieszeni.</p></div></div>
+        <div class="feat" data-slide="2"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg></div><div><h3>Przycisk SOS</h3><p>Gdy przychodzi fala ochoty, jeden przycisk włącza krótką medytację i oddech. Na koniec zaznaczasz, co ją wywołało, i widzisz, co Cię najczęściej łapie.</p></div></div>
+        <div class="feat" data-slide="3"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 21c-4-3-8-6.5-8-11a4 4 0 0 1 8-1 4 4 0 0 1 8 1c0 4.5-4 8-8 11z"/></svg></div><div><h3>Dwie medytacje i oddech</h3><p>Prowadzona autohipnoza „Kotwica wolności”, medytacja SOS i trzy ćwiczenia oddechowe po minucie. Możesz z nich korzystać od pierwszego dnia.</p></div></div>
+        <div class="feat" data-slide="4"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></div><div><h3>Licznik</h3><p>Dni wolności, niezapalone papierosy i pieniądze, które zostają w kieszeni.</p></div></div>
       </div>
     </div>
   </div>
@@ -769,8 +778,8 @@
       <div class="cost-row" role="row"><b role="rowheader">Pieniądze</b><span class="bad" role="cell">Paczka dziennie to około 720 zł miesięcznie, czyli ponad 8&nbsp;500 zł rocznie. Co roku więcej, bo akcyza rośnie</span><span class="good" role="cell"><b><span data-price>87 zł</span> raz.</b> Przy paczce dziennie program zwraca się w niecały tydzień</span></div>
       <div class="cost-row" role="row"><b role="rowheader">Zdrowie</b><span class="bad" role="cell">Kaszel rano, zadyszka na schodach, częstsze infekcje</span><span class="good" role="cell">Po 2 do 12 tygodniach lepsze krążenie i płuca, po kilku miesiącach mniej kaszlu (dane WHO)</span></div>
       <div class="cost-row" role="row"><b role="rowheader">Codzienność</b><span class="bad" role="cell">Zapach dymu na ubraniach, włosach i w aucie. Wychodzisz z rozmowy, z imprezy, z ciepłego domu na mróz</span><span class="good" role="cell">Wychodzisz tylko wtedy, kiedy chcesz. Ubrania pachną praniem</span></div>
-      <div class="cost-row" role="row"><b role="rowheader">Głowa</b><span class="bad" role="cell">Myśl o następnym papierosie wraca co godzinę. Każda próba rzucenia kończy się „jednym, ostatnim”</span><span class="good" role="cell">Wiesz, co uruchamia głód, i masz plan na każdą falę</span></div>
-      <div class="cost-row" role="row"><b role="rowheader">Czas</b><span class="bad" role="cell">Kolejne lata prób na samej silnej woli</span><span class="good" role="cell">Plan na 90 dni krok po kroku: lekcje audio, krótka wiadomość na każdy dzień i spotkania na żywo</span></div>
+      <div class="cost-row" role="row"><b role="rowheader">Głowa</b><span class="bad" role="cell">Myśl o następnym papierosie wraca co godzinę. Każda próba rzucenia kończy się „jednym, ostatnim”</span><span class="good" role="cell">Wiesz, co uruchamia głód. Na każdą falę masz przycisk SOS, medytację i oddech</span></div>
+      <div class="cost-row" role="row"><b role="rowheader">Czas</b><span class="bad" role="cell">Kolejne lata prób na samej silnej woli</span><span class="good" role="cell">Plan na 90 dni krok po kroku: lekcje audio, wiadomość na każdy dzień, dwie medytacje i spotkania na żywo</span></div>
     </div>
     <p class="cost-note">Dla porównania: jedna paczka kosztuje dziś około 24 zł. Cały program kosztuje mniej niż 4 paczki, a zostaje z Tobą na 3 miesiące.</p>
   </div>
@@ -784,7 +793,7 @@
         <span class="eyebrow">Co dostajesz</span>
         <h2>Pełny program <em>za <span data-price>87 zł</span></em></h2>
         <ul class="check">
-          <li><b>Aplikacja <span data-brand>Wolne Płuco</span>:</b> 7 lekcji audio, nagranie na dzień zero, ćwiczenia dnia, wiadomości na 90 dni, przycisk „Chcę zapalić” i licznik wolności</li>
+          <li><b>Aplikacja <span data-brand>Wolne Płuco</span>:</b> 7 lekcji audio, nagranie na dzień zero, ćwiczenia dnia, wiadomości na 90 dni, przycisk SOS, dwie prowadzone medytacje (autohipnoza „Kotwica wolności” i medytacja SOS), ćwiczenia oddechowe i licznik wolności</li>
           <li><b>Cotygodniowe spotkania na żywo</b> (Google Meet): autohipnoza, wsparcie i omówienie postępów. Termin i link masz w aplikacji</li>
           <li><b>Plan na dzień zero,</b> potknięcia i trudne sytuacje, w których najczęściej się wraca</li>
         </ul>
@@ -908,6 +917,7 @@
     <div style="margin-top:30px">
       <details><summary>Czy muszę rzucić od razu?</summary><p>Nie. Przez pierwszy tydzień palisz normalnie i przechodzisz lekcje. Ostatni papieros przychodzi wtedy, gdy jesteś gotowy, zwykle po 7 dniach.</p></details>
       <details><summary>Czy mogę używać plastrów albo leków?</summary><p>O lekach i plastrach decydujesz z lekarzem albo farmaceutą. Program przechodzisz tak samo w obu przypadkach, bo lekcje zmieniają to, jak myślisz o nikotynie.</p></details>
+      <details><summary>Co zrobić, gdy nagle bardzo chce mi się zapalić?</summary><p>Wciśnij w aplikacji SOS. Włączy się krótka medytacja, która przeprowadzi Cię przez falę, a obok masz minutę oddechu z kołem. Fala ochoty zwykle mija po kilku minutach. Przez pierwsze dni warto też raz dziennie posłuchać autohipnozy „Kotwica wolności”, wtedy w trudnej chwili wystarczy jeden gest.</p></details>
       <details><summary>Co, jeśli zapalę jednego?</summary><p>Nie ma „tylko jednego”, bo jeden papieros to powrót do pułapki. Jeśli tak się stanie, aplikacja prowadzi Cię do krótkiej lekcji o tym, co się wydarzyło, i proponuje nowy dzień zero.</p></details>
       <details><summary>Czy to działa przy e-papierosach i snusie?</summary><p>Tak. Nikotyna i mechanizm nawyku są te same, więc lekcje działają tak samo. W dniu zero oddajesz e-papierosa i liquidy albo puszkę saszetek.</p></details>
       <details><summary>Ile czasu dziennie mi to zajmie?</summary><p>Około 5 minut. Nagranie trwa 2 do 3 minut, do tego jedno ćwiczenie. Po dniu zero krótka wiadomość na minutę.</p></details>
@@ -975,9 +985,9 @@
   (function(){
     var slides = document.getElementById("slides"); if (!slides) return;
     var dots = all("#phoneDots button"), cap = document.getElementById("phoneCap");
-    var names = ["Dziś","Lekcje","Chcę zapalić","Licznik"], feats = all(".feat[data-slide]");
+    var names = ["Dziś","Lekcje","SOS","Medytacje i oddech","Licznik"], feats = all(".feat[data-slide]");
     var i = 0, timer = null, reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    function go(n){ i = (n + 4) % 4; slides.style.transform = "translateX(" + (-100 * i) + "%)";
+    function go(n){ var N = names.length; i = (n + N) % N; slides.style.transform = "translateX(" + (-100 * i) + "%)";
       dots.forEach(function(d, k){ d.setAttribute("aria-selected", k === i ? "true" : "false"); });
       cap.textContent = names[i]; feats.forEach(function(f){ f.classList.toggle("active", +f.dataset.slide === i); }); }
     function play(){ if (reduce) return; stop(); timer = setInterval(function(){ go(i + 1); }, 3500); }
