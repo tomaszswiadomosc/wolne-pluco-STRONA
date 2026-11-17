@@ -463,6 +463,24 @@
   @media(prefers-reduced-motion:reduce){.js .rv,.js .rv.in,.js .type.rv img,.js .type.rv .ill-svg,.js .card.rv .ill img,.js .rv .pop,.js .timeline li.rv:after{opacity:1!important;transform:none!important}}
   @media(min-width:940px){.sticky{display:none}}
   @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+  /* Tabelka kosztów */
+  .cost-lead{margin:14px 0 26px}
+  .cost-table{border:1.5px solid var(--line);border-radius:18px;overflow:hidden;background:var(--card)}
+  .cost-row{display:grid;grid-template-columns:1fr;gap:6px;padding:16px 18px;border-top:1px solid var(--line)}
+  .cost-row:first-child{border-top:0}
+  .cost-row b[role=rowheader]{font:400 24px/1.1 var(--serif);color:var(--ink)}
+  .cost-row .bad,.cost-row .good{position:relative;padding-left:28px;font-size:15.5px;line-height:1.5}
+  .cost-row .bad{color:var(--muted)}
+  .cost-row .bad:before{content:"✕";position:absolute;left:4px;top:0;color:var(--dim);font-weight:700}
+  .cost-row .good{color:var(--ink)}
+  .cost-row .good:before{content:"✓";position:absolute;left:0;top:1px;width:20px;height:20px;border-radius:50%;background:var(--lime);color:var(--lime-ink);font-size:12px;font-weight:800;display:grid;place-items:center}
+  .cost-headrow{display:none}
+  @media(min-width:760px){
+    .cost-row{grid-template-columns:150px 1fr 1fr;gap:22px;align-items:start;padding:18px 24px}
+    .cost-headrow{display:grid;background:var(--accent-soft);font:700 12px var(--text);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+    .cost-headrow span:last-child{color:var(--accent)}
+  }
+  .cost-note{color:var(--muted);font-size:15px;margin:18px 0 0;max-width:720px}
 </style>
 <link rel="icon" type="image/png" href="img/favicon.png">
 <link rel="apple-touch-icon" href="img/logo-192.png">
@@ -519,7 +537,7 @@
 <!-- Zdjęcia: Unsplash (licencja Unsplash, bez wymaganego podpisu).
      papierosy.jpg: Andres Siimon, https://unsplash.com/photos/ryBnRg4c3L0
      e-papierosy.jpg: Olena Bohovyk, https://unsplash.com/photos/Y0ishe3KOSU
-     snus.jpg: U.S. Food and Drug Administration, domena publiczna, https://commons.wikimedia.org/wiki/File:Nicotine_pouch_canister_containing_pouches.jpg
+     snus.jpg: zdjęcie od Tomasza (17.11.2026), marka zamazana
      nikotyna.jpg: https://unsplash.com/photos/7USMFYqt1NI
      nawyk.jpg: Vidak, https://unsplash.com/photos/Tpc8qe_LsyQ
      emocje.jpg: Vitaly Gariev, https://unsplash.com/photos/xQ93cUceb74 -->
@@ -538,7 +556,7 @@
         <figcaption><h3>E-papierosy</h3><p>Jednorazówki, pody, liquidy. Brak dymu nie oznacza braku nikotyny.</p></figcaption>
       </figure>
       <figure class="type">
-        <img src="img/snus.jpg" alt="Otwarta puszka z białymi saszetkami nikotynowymi" width="800" height="600" loading="lazy">
+        <img src="img/snus.jpg?v=2" alt="Puszka saszetek nikotynowych" width="800" height="600" loading="lazy">
         <figcaption><h3>Snus i saszetki</h3><p>Torebeczka pod wargę: z tytoniem albo „tobacco free”. Nikotyna działa tak samo.</p></figcaption>
       </figure>
     </div>
@@ -736,6 +754,24 @@
         <div class="feat" data-slide="3"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></div><div><h3>Licznik</h3><p>Dni wolności, niezapalone papierosy i pieniądze, które zostają w kieszeni.</p></div></div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- 7b. ILE CIĘ TO KOSZTUJE (tuż przed ofertą). Ceny: MF, prognoza średniej ceny paczki na 2026 r. 23,85 zł -->
+<section class="alt" id="koszt">
+  <div class="wrap">
+    <span class="eyebrow">Policz to uczciwie</span>
+    <h2>Ile kosztuje Cię <em>palenie?</em></h2>
+    <p class="lead cost-lead">Policz, ile wydajesz na papierosy, wkłady albo saszetki w miesiącu i w roku. Dodaj kaszel, zadyszkę na schodach i każde wyjście na mróz w środku rozmowy. Tyle naprawdę kosztuje Cię ten nawyk.</p>
+    <div class="cost-table" role="table" aria-label="Porównanie: gdy dalej palisz i po 90 dniach programu">
+      <div class="cost-row cost-headrow" role="row"><span role="columnheader"></span><span role="columnheader">Gdy dalej palisz</span><span role="columnheader">Po 90 dniach programu</span></div>
+      <div class="cost-row" role="row"><b role="rowheader">Pieniądze</b><span class="bad" role="cell">Paczka dziennie to około 720 zł miesięcznie, czyli ponad 8&nbsp;500 zł rocznie. Co roku więcej, bo akcyza rośnie</span><span class="good" role="cell"><b><span data-price>87 zł</span> raz.</b> Przy paczce dziennie program zwraca się w niecały tydzień</span></div>
+      <div class="cost-row" role="row"><b role="rowheader">Zdrowie</b><span class="bad" role="cell">Kaszel rano, zadyszka na schodach, częstsze infekcje</span><span class="good" role="cell">Po 2 do 12 tygodniach lepsze krążenie i płuca, po kilku miesiącach mniej kaszlu (dane WHO)</span></div>
+      <div class="cost-row" role="row"><b role="rowheader">Codzienność</b><span class="bad" role="cell">Zapach dymu na ubraniach, włosach i w aucie. Wychodzisz z rozmowy, z imprezy, z ciepłego domu na mróz</span><span class="good" role="cell">Wychodzisz tylko wtedy, kiedy chcesz. Ubrania pachną praniem</span></div>
+      <div class="cost-row" role="row"><b role="rowheader">Głowa</b><span class="bad" role="cell">Myśl o następnym papierosie wraca co godzinę. Każda próba rzucenia kończy się „jednym, ostatnim”</span><span class="good" role="cell">Wiesz, co uruchamia głód, i masz plan na każdą falę</span></div>
+      <div class="cost-row" role="row"><b role="rowheader">Czas</b><span class="bad" role="cell">Kolejne lata prób na samej silnej woli</span><span class="good" role="cell">Plan na 90 dni krok po kroku: lekcje audio, krótka wiadomość na każdy dzień i spotkania na żywo</span></div>
+    </div>
+    <p class="cost-note">Dla porównania: jedna paczka kosztuje dziś około 24 zł. Cały program kosztuje mniej niż 4 paczki, a zostaje z Tobą na 3 miesiące.</p>
   </div>
 </section>
 
