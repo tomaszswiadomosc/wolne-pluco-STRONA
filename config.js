@@ -5,8 +5,8 @@ window.LANDING = {
   // Nazwa programu. Pojawia się w logo, tekstach i stopce. Robocza, do zmiany.
   MARKA: "Wolne Płuco",
 
-  // Cena programu (tekst, np. "87 zł").
-  CENA: "87 zł",
+  // Cena programu (tekst, np. "49 zł").
+  CENA: "49 zł",
 
   // Supabase: projekt wolne-pluco (Frankfurt). Klucz publishable jest publiczny z założenia.
   SUPABASE_URL: "https://mifdxevdpptjgkwrxhpu.supabase.co",
