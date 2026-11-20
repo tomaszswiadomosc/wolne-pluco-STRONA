@@ -284,7 +284,7 @@
   .opt{font-weight:400;color:var(--dim)}
   .two-col{display:grid;gap:0 14px}
   @media(min-width:560px){.two-col{grid-template-columns:1fr 1fr}}
-  input[type=text],input[type=email],select,textarea{width:100%;font:inherit;font-size:16px;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:13px 14px;margin-bottom:16px;outline:none;transition:border .15s}
+  input[type=text],input[type=email],input[type=tel],select,textarea{width:100%;font:inherit;font-size:16px;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:13px 14px;margin-bottom:16px;outline:none;transition:border .15s}
   input::placeholder,textarea::placeholder{color:var(--dim)}
   input:focus,select:focus,textarea:focus{border-color:var(--accent)}
   textarea{min-height:90px;resize:vertical}
@@ -837,24 +837,14 @@
           <label><input type="radio" name="oferta" value="przewodnik"> <span>Przewodnik PDF, 19 zł<small>„Dlaczego tak trudno rzucić nikotynę?”, wysyłam mailem</small></span></label>
         </div>
         <div class="two-col">
-          <div><label for="imie">Imię</label><input type="text" id="imie" name="imie" autocomplete="given-name" maxlength="80" required></div>
+          <div><label for="imie">Nazwa na IG, TikToku lub FB</label><input type="text" id="imie" name="imie" autocomplete="off" autocapitalize="off" spellcheck="false" maxlength="80" placeholder="@twojprofil" required></div>
           <div><label for="email">E-mail</label><input type="email" id="email" name="email" autocomplete="email" maxlength="200" required></div>
         </div>
         <label for="telefon">Telefon <span class="opt">(zadzwonię, żeby ustalić szczegóły)</span></label>
         <input type="tel" id="telefon" name="telefon" autocomplete="tel" inputmode="tel" maxlength="30" placeholder="np. 500 100 200" required>
-        <label for="profil">Nazwa profilu na Instagramie lub TikToku <span class="opt">(opcjonalnie)</span></label>
-        <input type="text" id="profil" name="profil" placeholder="@twojprofil" maxlength="200">
-        <div class="two-col">
-          <div><label for="ile">Ile palisz dziennie?</label>
-            <select id="ile" name="ile" required><option value="">Wybierz</option><option>Do 5</option><option>6 do 10</option><option>11 do 20</option><option>Ponad 20</option><option>E-papieros lub podgrzewacz</option><option>Snus lub saszetki nikotynowe</option></select></div>
-          <div><label for="jak_dlugo">Od kiedy palisz?</label>
-            <select id="jak_dlugo" name="jak_dlugo" required><option value="">Wybierz</option><option>Mniej niż 2 lata</option><option>2 do 10 lat</option><option>Ponad 10 lat</option><option>Ponad 20 lat</option></select></div>
-        </div>
-        <label for="wiadomosc">Co jest dla Ciebie najtrudniejsze? <span class="opt">(opcjonalnie)</span></label>
-        <textarea id="wiadomosc" name="wiadomosc" maxlength="600" placeholder="Np. poranna kawa i stres w pracy"></textarea>
         <div class="hp" aria-hidden="true"><label>Firma<input type="text" name="firma" tabindex="-1" autocomplete="off"></label></div>
         <label class="tick"><input type="checkbox" id="wiek18" required> <span>Mam ukończone 18 lat.</span></label>
-        <label class="tick"><input type="checkbox" id="zgoda" required> <span>Zgadzam się na przetwarzanie podanych danych, w tym informacji o paleniu, w celu zapisu do programu <span data-brand>Wolne Płuco</span>. Administratorem jest Tomasz Świadomość. Mogę wycofać zgodę w każdej chwili. Szczegóły w <a id="privacy" href="#" target="_blank" rel="noopener">polityce prywatności</a>.</span></label>
+        <label class="tick"><input type="checkbox" id="zgoda" required> <span>Zgadzam się na przetwarzanie podanych danych (nazwa profilu, e-mail, telefon) w celu kontaktu i zapisu do programu <span data-brand>Wolne Płuco</span>. Administratorem jest Tomasz Świadomość. Mogę wycofać zgodę w każdej chwili. Szczegóły w <a id="privacy" href="#" target="_blank" rel="noopener">polityce prywatności</a>.</span></label>
         <button class="btn" type="submit" id="send" style="width:100%;margin-top:6px">Zapisuję się</button>
         <div class="msg" id="msg" role="alert"></div>
       </form>
@@ -1055,7 +1045,7 @@
   function success(name, dup){
     form.classList.add("hidden");
     document.getElementById("done").classList.remove("hidden");
-    document.getElementById("doneTitle").textContent = dup ? "To zgłoszenie już do mnie dotarło. Odezwę się wkrótce." : "Dzięki" + (name ? ", " + name : "") + "! Twoje zgłoszenie dotarło.";
+    document.getElementById("doneTitle").textContent = dup ? "To zgłoszenie już do mnie dotarło. Odezwę się wkrótce." : "Dzięki! Twoje zgłoszenie dotarło.";
     var o = (form.querySelector('input[name="oferta"]:checked') || {}).value;
     if (!dup && o === "przewodnik") document.getElementById("doneText").textContent = "Zadzwonię albo napiszę, zwykle w ciągu 24 godzin. Po płatności BLIK-iem wyślę Ci przewodnik mailem. Zajrzyj też do folderu Oferty lub Spam.";
   }
@@ -1065,15 +1055,12 @@
     if (f.firma.value) return success("", false);
     var data = {
       oferta: (form.querySelector('input[name="oferta"]:checked') || {}).value || "program",
-      imie: f.imie.value.trim(), email: f.email.value.trim().toLowerCase(), telefon: f.telefon.value.trim(), profil: f.profil.value.trim() || null,
-      ile_dziennie: f.ile.value, jak_dlugo: f.jak_dlugo.value, wiadomosc: f.wiadomosc.value.trim() || null,
+      imie: f.imie.value.trim().replace(/^@+/, "").slice(0, 80), profil: f.imie.value.trim(), email: f.email.value.trim().toLowerCase(), telefon: f.telefon.value.trim(),
       wiek18: document.getElementById("wiek18").checked, zgoda: document.getElementById("zgoda").checked, zrodlo: zrodlo
     };
-    if (!data.imie) return err("Wpisz swoje imię.");
+    if (!data.imie) return err("Wpisz swoją nazwę na Instagramie, TikToku albo Facebooku.");
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(data.email)) return err("Sprawdź adres e-mail.");
     if (data.telefon.replace(/\D/g, "").length < 9) return err("Wpisz numer telefonu, żebym mógł do Ciebie zadzwonić.");
-    if (!data.ile_dziennie) return err("Zaznacz, ile palisz dziennie.");
-    if (!data.jak_dlugo) return err("Zaznacz, od kiedy palisz.");
     if (!data.wiek18) return err("Program jest dla osób pełnoletnich.");
     if (!data.zgoda) return err("Zaznacz zgodę na przetwarzanie danych.");
     if (!C.SUPABASE_URL) { console.warn("Tryb podglądu: formularz jeszcze nie zapisuje danych.", data); return success(data.imie, false); }
